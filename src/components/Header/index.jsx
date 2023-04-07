@@ -1,45 +1,35 @@
 import { useState } from "react";
-import Link from "../Link"
+import NavLink from '../NavLink';
 import NavBar from "../NavBar";
-import styles from "./header.module.css";
-import HamburgerMenu from "../HamburgerMenu"
 import CartSummary from "../CartSummary";
 import SetColorMode from "../SetColorMode"
+import { MenuOutlined } from '@ant-design/icons';
+import styles from "./header.module.css";
 
-export default function Header({ title, slogan }) {
+export default function Header() {
     const [isOnTouch, setIsOnTouch] = useState(false);
 
     return (
-        <div className="container">
-            <div className={styles.header}>
-                <div className={styles.headerWwrap}>
-                    <HamburgerMenu
+        <div className={styles.bg}>
+            <div className="container">
+                <div className={styles.header}>
+                    <div className={styles.navBar}>
+                        <NavLink to="/">
+                            <img className={styles.logo} src="/images/logoMain.png" alt="logo" />
+                        </NavLink>
+
+                        <NavBar open={isOnTouch} onClose={() => setIsOnTouch(false)} />
+                    </div>
+                    <CartSummary />
+                    {/* <SetColorMode /> */}
+                    <MenuOutlined
                         onClick={() => setIsOnTouch(!isOnTouch)}
                         isOnTouch={isOnTouch}
+                        className={styles.hamburgerIcon}
                     />
-                    <Link to="/">
-                        <h1 className={styles.headerTitle}>
-                            {title}
-                        </h1>
-                    </Link>
-
-                    <p className={styles.headerSlogan}>
-                        {slogan}
-                    </p>
-
                 </div>
-
-
-                <hr className={styles.hrHeaderLine} />
-                <NavBar open={isOnTouch} onClose={() => setIsOnTouch(false)} />
             </div>
-            <div className={styles.iconWrap}>
-                <SetColorMode/>
-                <CartSummary/>                
-            </div>
-
         </div>
-
     );
 }
 

@@ -9,7 +9,7 @@ function Home() {
   const {
     token: { colorBgBase, colorTextBase },
   } = theme.useToken();
-  const title = "NORDIC NEST Shopping Cart";
+  const title = "北捷線上商城｜首頁";
 
   return (
     <div className="mainLayout">
@@ -22,11 +22,7 @@ function Home() {
             }
         `}</style>
       </Helmet>
-      <Header
-        className="layoutHeader"
-        title={title}
-        slogan="An example made by Vite."
-      />
+      <Header className="layoutHeader" />
       <div className="layoutContent container">
         <ProductList products={products} />
       </div>
