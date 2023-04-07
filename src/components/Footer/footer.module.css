@@ -1,59 +1,62 @@
-.footer {
-   display: grid;
-   padding-top: 2rem;
-   padding-right: 1rem;
-   padding-left: 1rem;
-   grid-template-areas: 
-     'content followUs contactUs'
-     'copyRight copyRight copyRight'
-   ;
-   grid-template-rows: auto 3rem;
-   grid-template-columns: 12fr 2fr minmax(7rem, 1fr);
-   gap: 1em;
-   overflow: hidden;
+.bg1 {
+   background-color: #FEFEFE;
+   min-height: 18px;
 }
 
-.hrFooterLine {
-   margin: 25px auto 30px;
-   padding: 0;
-   width: 100%;
-   border: 0;
-   border-top: solid 2px;
-   border-color: #3e3f97;
-   opacity: 1;
-   border-radius: 0.2rem;
+.bg2 {
+   background-color: #38B033;
+   min-height: 15px;
 }
 
-.content {
-   grid-area: content;
+.bg3 {
+   background-color: #FEFEFE;
+   min-height: 18px;
 }
 
-.followUs {
-   grid-area: followUs;
+.bg4 {
+   background-color: #017AB1;
 }
 
-.contactUs {
-   grid-area: contactUs;
-}
-
-.iconsArea {
+.footerMain {
    display: flex;
-   justify-content: flex-start;
-   align-items: center;
-}
-
-.icon {
-   display: block;
-   width: 2rem;
-   height: 2rem;
-   padding-right: 0.5rem;
-}
-
-.copyRight {
-   grid-area: copyRight;
-   height: 4rem;
-   opacity: 0.6;
-   display: flex;
+   flex-direction: row;
    justify-content: center;
-   align-items: flex-start;
+   align-items: center;
+   flex-wrap: wrap;
+   padding: 1rem 0;
+}
+
+.navLogo {
+   margin: 0 0.5rem;
+}
+
+.logo {
+   max-width: 160px;
+}
+
+.navLink {
+   font-size: 0.8rem;
+   /* font-weight: 500; */
+   text-align: end;
+   margin: 0 0.5rem;
+}
+
+.footerBottom {
+   font-size: 0.6rem;
+   text-align: center;
+   padding-bottom: 0.5rem;
+}
+
+@media (min-width: 992px) {
+   .navLogo {
+      flex: 3;
+   }
+
+   .logo {
+      max-width: 200px;
+   }
+
+   .navLink {
+      flex: 1;
+   }
 }

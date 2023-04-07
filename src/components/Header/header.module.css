@@ -23,7 +23,6 @@
 
 .logo {
   max-width: 200px;
-  height: auto;
 }
 
 .hamburgerIcon {
@@ -40,6 +39,5 @@
 @media (min-width: 992px) {
   .logo {
     max-width: 280px;
-    height: auto;
   }
 }

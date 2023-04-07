@@ -20,13 +20,13 @@ const darkTheme = {
 const lightTheme = {
   algorithm: theme.defaultAlgorithm,
   token: {
-    colorBgFooter: "#3e3f97",
-    colorTextFooter: '#ffffff',
+    colorBgFooter: "#017AB1",
+    colorTextFooter: "#fefefe",
   },
   components: {
     Button: {
-      colorPrimary: "#6366f2;",
-      colorPrimaryHover: "#9192f5",
+      colorPrimary: "#017AB1;",
+      colorPrimaryHover: "#2B99CB",
     },
   },
 };
