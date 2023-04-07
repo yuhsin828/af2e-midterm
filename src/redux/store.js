@@ -3,7 +3,7 @@ import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
 import cartReducer from './cartSlice';
-import colorReducer from './colorSLice';
+import colorReducer from './colorSlice';
 
 // Data Persist Config
 const persistConfig = {
