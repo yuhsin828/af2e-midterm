@@ -4,9 +4,10 @@ import { theme } from "antd"
 export default function (props) {
    const {
       token: { colorTextBase },
-    } = theme.useToken();
+   } = theme.useToken();
+   
    return (
-      <NavLink {...props} style ={{
+      <NavLink {...props} style={{
          textDecoration: 'none',
          color: colorTextBase,
       }}>

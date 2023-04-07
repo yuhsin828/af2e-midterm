@@ -3,10 +3,9 @@ import Link from '../Link';
 import styles from './productitem.module.css';
 
 export default function ProductItem({ product }) {
-
    return (
       <div className={styles.item}>
-        <Link to={`/products/id/${product.id}`}>
+         <Link to={`/products/id/${product.id}`}>
             <img
                style={{ width: '100%' }}
                src={product.image}

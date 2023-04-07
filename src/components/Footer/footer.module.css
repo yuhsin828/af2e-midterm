@@ -27,22 +27,26 @@
 }
 
 .navLogo {
-   margin: 0 0.5rem;
+   margin: 0.4rem;
 }
 
 .logo {
    max-width: 160px;
 }
 
+.navItem{
+   text-align: end;
+   margin: 0.4rem;
+}
+
 .navLink {
    font-size: 0.8rem;
-   /* font-weight: 500; */
-   text-align: end;
-   margin: 0 0.5rem;
+   color: #FEFEFE !important;
 }
 
 .footerBottom {
    font-size: 0.6rem;
+   font-weight: 300;
    text-align: center;
    padding-bottom: 0.5rem;
 }
@@ -56,7 +60,7 @@
       max-width: 200px;
    }
 
-   .navLink {
+   .navItem {
       flex: 1;
    }
 }
