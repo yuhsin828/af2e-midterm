@@ -60,6 +60,22 @@ function Home() {
       backgroundColor: '#017AB1',
       color: '#fefefe',
     },
+    bgLightBlue: {
+      backgroundColor: '#E9F8FF',
+    },
+    models: {
+      overflowX: 'scroll',
+      display: 'flex',
+      // margin: '0 -32rem',
+    },
+    modelCtr: {
+      margin: '3rem 1rem',
+    },
+    modelImg: {
+      // maxWidth: '100%',
+      width: '15rem',
+      height: 'auto',
+    }
   };
 
   return (
@@ -106,6 +122,35 @@ function Home() {
           <Link to="/categories/new" style={styles.moreBtn}>
             查看更多
           </Link>
+        </div>
+      </div>
+
+      <div style={styles.bgLightBlue}>
+        <div style={styles.models}>
+          {/* <div style={styles.modelCtr}>
+            <img style={styles.modelImg} src="/images/modelImg_0.png" alt="modelImg" />
+          </div>
+          <div style={styles.modelCtr}>
+            <img style={styles.modelImg} src="/images/modelImg_0.png" alt="modelImg" />
+          </div> */}
+          <Link to="/products/id" style={styles.modelCtr}>
+            <img style={styles.modelImg} src="/images/modelImg_1.png" alt="modelImg" />
+          </Link>
+          <Link to="/products/id" style={styles.modelCtr}>
+            <img style={styles.modelImg} src="/images/modelImg_2.png" alt="modelImg" />
+          </Link>
+          <Link to="/products/id" style={styles.modelCtr}>
+            <img style={styles.modelImg} src="/images/modelImg_3.png" alt="modelImg" />
+          </Link>
+          <Link to="/products/id" style={styles.modelCtr}>
+            <img style={styles.modelImg} src="/images/modelImg_more.png" alt="modelImg" />
+          </Link>
+          {/* <div style={styles.modelCtr}>
+            <img style={styles.modelImg} src="/images/modelImg_0.png" alt="modelImg" />
+          </div>
+          <div style={styles.modelCtr}>
+            <img style={styles.modelImg} src="/images/modelImg_0.png" alt="modelImg" />
+          </div> */}
         </div>
       </div>
 
