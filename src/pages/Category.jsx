@@ -12,8 +12,11 @@ function Category() {
     token: { colorBgBase, colorTextBase },
   } = theme.useToken();
   const { categoryName } = useParams();
+
   const _products = products.filter(
-    x => x?.category.toUpperCase() === categoryName.toUpperCase()
+    categoryName == "hot" || categoryName == "new"
+      ? x => x?.hotNew === categoryName
+      : x => x?.category === categoryName
   );
 
   const title = _.startCase(categoryName);
@@ -29,14 +32,11 @@ function Category() {
             }
         `}</style>
       </Helmet>
-      <Header
-        className="layoutHeader"
-        title={title}
-        slogan="An example made by Vite."
-      />
+      <Header className="layoutHeader" />
+
       <div className="layoutContent container">
         <ProductList products={_products} />
-      </div>      
+      </div>
       <Footer className="layoutFooter" />
     </div>
   );
