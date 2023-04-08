@@ -15,11 +15,11 @@ function Home() {
   const title = "北捷線上商城";
 
   const _hotProducts = products.filter(
-    x => x?.hotNew === 'hot'
-  );
+    x => x?.hotNew === '熱門精選'
+  ).slice(0, 4);
   const _newProducts = products.filter(
-    x => x?.hotNew === 'new'
-  );
+    x => x?.hotNew === '新品上市'
+  ).slice(0, 4);
 
   const { lg } = useBreakpoint();
 
@@ -63,7 +63,7 @@ function Home() {
     },
     moreBtn: {
       flex: lg ? 'none' : 1,
-      padding: '0.5rem 3rem',
+      padding: lg ? '0.5rem 3rem' : '0.6rem 0',
       textDecoration: 'none',
       textAlign: 'center',
       backgroundColor: '#017AB1',
@@ -80,7 +80,6 @@ function Home() {
       margin: '3rem 1rem',
     },
     modelImg: {
-      // maxWidth: '100%',
       width: '15rem',
       height: 'auto',
     }
@@ -119,7 +118,7 @@ function Home() {
         <div style={styles.contentTitle}>熱門精選</div>
         <ProductList products={_hotProducts} />
         <div style={styles.btnCtr}>
-          <Link to="/categories/hot" style={styles.moreBtn}>
+          <Link to="/categories/熱門精選" style={styles.moreBtn}>
             查看更多
           </Link>
         </div>
@@ -130,7 +129,7 @@ function Home() {
         </div>
         <ProductList products={_newProducts} />
         <div style={styles.btnCtr}>
-          <Link to="/categories/new" style={styles.moreBtn}>
+          <Link to="/categories/新品上市" style={styles.moreBtn}>
             查看更多
           </Link>
         </div>
@@ -138,16 +137,16 @@ function Home() {
 
       <div style={styles.bgLightBlue}>
         <div style={styles.models}>
-          <Link to="/products/id" style={styles.modelCtr}>
+          <Link to="/products/MFrvgXh8" style={styles.modelCtr}>
             <img style={styles.modelImg} src="/images/modelImg_1.png" alt="modelImg" />
           </Link>
-          <Link to="/products/id" style={styles.modelCtr}>
+          <Link to="/products/KdBsuFM9" style={styles.modelCtr}>
             <img style={styles.modelImg} src="/images/modelImg_2.png" alt="modelImg" />
           </Link>
-          <Link to="/products/id" style={styles.modelCtr}>
+          <Link to="/products/LDC75wNM" style={styles.modelCtr}>
             <img style={styles.modelImg} src="/images/modelImg_3.png" alt="modelImg" />
           </Link>
-          <Link to="/products/id" style={styles.modelCtr}>
+          <Link to="/categories/北捷模型" style={styles.modelCtr}>
             <img style={styles.modelImg} src="/images/modelImg_more.png" alt="modelImg" />
           </Link>
         </div>

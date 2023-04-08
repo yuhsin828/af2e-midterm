@@ -14,12 +14,12 @@ function Category() {
   const { categoryName } = useParams();
 
   const _products = products.filter(
-    categoryName == "hot" || categoryName == "new"
+    categoryName == "熱門精選" || categoryName == "新品上市"
       ? x => x?.hotNew === categoryName
       : x => x?.category === categoryName
   );
 
-  const title = _.startCase(categoryName);
+  const title = _.startCase(categoryName) + `｜北捷線上商城`;
 
   return (
     <div className="mainLayout">

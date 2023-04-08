@@ -1,33 +1,29 @@
-.item {
-   /* border-radius: 1%;
-   border: solid gray 1px; */
-   padding: 0;
-}
-
 .info {
-   padding: 1.2rem;
-}
-
-.category {
-   opacity: 0.4;
-   margin-bottom: 0.2rem;
+   padding: 0.5rem 0;
 }
 
 .name {
-   margin-bottom: 0.5rem;
+   margin-bottom: 0.2rem;
+   font-size: 0.8rem;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
 }
 
-.description {
-   opacity: 0.6;
-   margin-bottom: 1rem;
+.price {
+   font-size: 0.8rem;
+   font-weight: 700;
 }
 
-.link {
-   text-decoration: none;
-   align-self: center;
-   color: #8183ff;
-}
+@media (min-width: 576px) {
+   .name {
+      text-align: center;
+      -webkit-line-clamp: 1;
+   }
 
-.textGray {
-   opacity: 0.6;
+   .price {
+      text-align: center;
+   }
 }
