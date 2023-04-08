@@ -41,6 +41,7 @@ function Home() {
       fontSize: '1.2rem',
       fontWeight: '700',
       margin: '1rem 0',
+      marginTop: lg ? '2rem' : '3rem',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
@@ -50,7 +51,7 @@ function Home() {
     },
     titleDivider: {
       display: lg ? 'flex' : 'none',
-      height: '1px',
+      height: '0.8px',
       margin: '0 0.5rem',
       flex: 'auto',
       backgroundColor: '#888888',
@@ -58,7 +59,7 @@ function Home() {
     btnCtr: {
       display: 'flex',
       justifyContent: 'center',
-      margin: '1rem 0',
+      margin: '1rem 0.5rem',
     },
     moreBtn: {
       flex: lg ? 'none' : 1,
@@ -101,13 +102,16 @@ function Home() {
 
       <Carousel autoplay>
         <div>
-          <img style={styles.banner} src="/images/banner_0.png" alt="banner" />
-        </div>
-        <div>
           <img style={styles.banner} src="/images/banner_1.png" alt="banner" />
         </div>
         <div>
           <img style={styles.banner} src="/images/banner_2.png" alt="banner" />
+        </div>
+        <div>
+          <img style={styles.banner} src="/images/banner_3.png" alt="banner" />
+        </div>
+        <div>
+          <img style={styles.banner} src="/images/banner_4.png" alt="banner" />
         </div>
       </Carousel>
 
