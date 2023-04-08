@@ -21,7 +21,7 @@ function Home() {
     x => x?.hotNew === '新品上市'
   ).slice(0, 4);
 
-  const { lg } = useBreakpoint();
+  const { lg, xl } = useBreakpoint();
 
   const styles = {
     banner: {
@@ -75,6 +75,7 @@ function Home() {
     models: {
       overflowX: 'scroll',
       display: 'flex',
+      justifyContent: xl ? 'center' : 'start',
     },
     modelCtr: {
       margin: '3rem 1rem',

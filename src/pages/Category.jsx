@@ -1,11 +1,12 @@
 import { useParams } from 'react-router-dom';
 import { Helmet } from "react-helmet-async"
 import _ from 'lodash';
-import { theme } from 'antd';
+import { theme, Row, Col } from 'antd';
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import ProductList from "../components/ProductList";
 import products from "../json/products.json";
+import CategoryMenu from "../components/CategoryMenu";
 
 function Category() {
   const {
@@ -35,10 +36,30 @@ function Category() {
       <Header className="layoutHeader" />
 
       <div className="layoutContent container">
-        <ProductList products={_products} />
+        <Row gutter={[0, 32]}>
+          <Col
+            span={0}
+            md={{ span: 8 }}
+            lg={{ span: 6 }}
+            xxl={{ span: 4 }}
+            style={{ paddingRight: '0.5rem', }}
+          >
+            <CategoryMenu />
+          </Col>
+          <Col
+            span={24}
+            md={{ span: 16 }}
+            lg={{ span: 18 }}
+            xxl={{ span: 20 }}
+            style={{ padding: 0 }}
+          >
+            <ProductList products={_products} />
+          </Col>
+        </Row>
       </div>
+
       <Footer className="layoutFooter" />
-    </div>
+    </div >
   );
 }
 
