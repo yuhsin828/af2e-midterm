@@ -1,10 +1,12 @@
 import { Helmet } from "react-helmet-async"
-import { theme, Carousel } from 'antd';
+import { theme, Carousel, Grid } from 'antd';
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import ProductList from "../components/ProductList";
 import products from "../json/products.json";
 import { Link } from "react-router-dom"
+
+const { useBreakpoint } = Grid;
 
 function Home() {
   const {
@@ -18,6 +20,8 @@ function Home() {
   const _newProducts = products.filter(
     x => x?.hotNew === 'new'
   );
+
+  const { lg } = useBreakpoint();
 
   const styles = {
     banner: {
@@ -38,12 +42,14 @@ function Home() {
       fontWeight: '700',
       margin: '1rem 0',
       display: 'flex',
+      justifyContent: 'center',
       alignItems: 'center',
     },
     contentTitle2: {
       margin: '0 0.5rem',
     },
     titleDivider: {
+      display: lg ? 'flex' : 'none',
       height: '1px',
       margin: '0 0.5rem',
       flex: 'auto',
@@ -55,8 +61,10 @@ function Home() {
       margin: '1rem 0',
     },
     moreBtn: {
+      flex: lg ? 'none' : 1,
       padding: '0.5rem 3rem',
       textDecoration: 'none',
+      textAlign: 'center',
       backgroundColor: '#017AB1',
       color: '#fefefe',
     },
@@ -66,7 +74,6 @@ function Home() {
     models: {
       overflowX: 'scroll',
       display: 'flex',
-      // margin: '0 -32rem',
     },
     modelCtr: {
       margin: '3rem 1rem',
@@ -127,12 +134,6 @@ function Home() {
 
       <div style={styles.bgLightBlue}>
         <div style={styles.models}>
-          {/* <div style={styles.modelCtr}>
-            <img style={styles.modelImg} src="/images/modelImg_0.png" alt="modelImg" />
-          </div>
-          <div style={styles.modelCtr}>
-            <img style={styles.modelImg} src="/images/modelImg_0.png" alt="modelImg" />
-          </div> */}
           <Link to="/products/id" style={styles.modelCtr}>
             <img style={styles.modelImg} src="/images/modelImg_1.png" alt="modelImg" />
           </Link>
@@ -145,12 +146,6 @@ function Home() {
           <Link to="/products/id" style={styles.modelCtr}>
             <img style={styles.modelImg} src="/images/modelImg_more.png" alt="modelImg" />
           </Link>
-          {/* <div style={styles.modelCtr}>
-            <img style={styles.modelImg} src="/images/modelImg_0.png" alt="modelImg" />
-          </div>
-          <div style={styles.modelCtr}>
-            <img style={styles.modelImg} src="/images/modelImg_0.png" alt="modelImg" />
-          </div> */}
         </div>
       </div>
 
