@@ -3,11 +3,11 @@ import { theme } from 'antd';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-function Activity() {
+function Member() {
     const {
         token: { colorBgBase, colorTextBase },
     } = theme.useToken();
-    const title = "優惠活動";
+    const title = "會員專區";
 
     return (
         <div className="mainLayout">
@@ -22,11 +22,11 @@ function Activity() {
             </Helmet>
             <Header className="layoutHeader" />
             <div className="layoutContent container">
-                <div style={{ fontSize: '1.2rem', fontWeight: '700', textAlign: 'center', margin: '1rem 0' }}>優惠活動，敬請期待</div>
+                <div style={{ fontSize: '1.2rem', fontWeight: '700', textAlign: 'center', margin: '1rem 0' }}>會員專區</div>
             </div>
             <Footer className="layoutFooter" />
         </div>
     );
 }
 
-export default Activity;
+export default Member;

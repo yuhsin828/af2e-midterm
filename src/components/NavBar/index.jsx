@@ -70,7 +70,7 @@ export default function NavBar({ open, onClose }) {
     //     },
     //     {
     //         label:
-    //             <NavLink to="/activities/優惠活動" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+    //             <NavLink to="/activities" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
     //                 優惠活動
     //             </NavLink>,
     //         key: '熱門精選',
@@ -135,10 +135,10 @@ export default function NavBar({ open, onClose }) {
                 <NavLink to="/categories/所有商品" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                     商品列表
                 </NavLink>
-                <NavLink to="/activities/優惠活動" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                <NavLink to="/activities" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                     優惠活動
                 </NavLink>
-                <NavLink to="#" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                <NavLink to="/member" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                     會員專區
                 </NavLink>
             </div>
@@ -157,13 +157,13 @@ export default function NavBar({ open, onClose }) {
                     <SubMenu />
                     <Divider className={styles.largeDNone} />
 
-                    <NavLink to="/activities/優惠活動" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                    <NavLink to="/activities" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                         <GiftOutlined className={styles.icon} />
                         優惠活動
                     </NavLink>
                     <Divider className={styles.largeDNone} />
 
-                    <NavLink to="#" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                    <NavLink to="/member" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                         <UserOutlined className={styles.icon} />
                         會員專區
                     </NavLink>

@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Category from './pages/Category';
 import Product from './pages/Product';
 import Activity from './pages/Activity';
+import Member from './pages/Member';
 import { darkTheme, lightTheme } from './theme';
 import { selectLightMode } from "./redux/colorSlice";
 
@@ -24,8 +25,11 @@ function Router() {
             <Route path="products">
               <Route path=":productId" element={<Product />} />
             </Route>
-            <Route path="activities">
-              <Route path=":activityName" element={<Activity />} />
+            <Route path="activities" element={<Activity />}>
+              <Route path=":activityName" />
+            </Route>
+            <Route path="member" element={<Member />}>
+              <Route path=":memberOption" />
             </Route>
           </Routes>
         </BrowserRouter>
