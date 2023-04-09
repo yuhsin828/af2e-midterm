@@ -4,18 +4,18 @@ import styles from './footer.module.css';
 
 export default function Footer() {
     const {
-        token: { colorBgFooter, colorTextFooter },
+        token: { colorBgBlue, colorBgBlueText, colorBgWhite, colorBgGreen },
     } = theme.useToken();
 
     return (
         <div style={{
-            backgroundColor: colorBgFooter,
-            color: colorTextFooter,
+            backgroundColor: colorBgBlue,
+            color: colorBgBlueText,
         }}>
             {/* <div className={styles.bg1}></div> */}
-            <div className={styles.bg2}></div>
-            <div className={styles.bg3}></div>
-            <div className={styles.bg4}>
+            <div style={{ backgroundColor: colorBgGreen, minHeight: '0.8rem' }}></div>
+            <div style={{ backgroundColor: colorBgWhite, minHeight: '1rem' }}></div>
+            <div>
                 <div className="container">
                     <div className={styles.footer}>
                         <div className={styles.footerMain}>

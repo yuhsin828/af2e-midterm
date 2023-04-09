@@ -1,20 +1,20 @@
-import { Helmet } from "react-helmet-async"
+import { Helmet } from "react-helmet-async";
 import { theme, Carousel, Grid } from 'antd';
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import ProductList from "../components/ProductList";
 import products from "../json/products.json";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const { useBreakpoint } = Grid;
 
 function Home() {
   const {
-    token: { colorBgBase, colorTextBase },
+    token: { colorBgBase, colorTextBase, colorBgBlue, colorBgBlueText, colorBgLightBlue, colorBgWhite },
   } = theme.useToken();
   const title = "北捷線上商城";
 
-  const { sm, md, lg, xl } = useBreakpoint();
+  const { sm, md, xl } = useBreakpoint();
 
   const showItemCount = xl ? 4 : sm ? 3 : 4;
 
@@ -56,7 +56,8 @@ function Home() {
       height: '0.8px',
       margin: '0 0.5rem',
       flex: 'auto',
-      backgroundColor: '#888888',
+      backgroundColor: colorTextBase,
+      opacity: 0.6,
     },
     btnCtr: {
       display: 'flex',
@@ -68,11 +69,11 @@ function Home() {
       padding: md ? '0.5rem 3rem' : '0.6rem 0',
       textDecoration: 'none',
       textAlign: 'center',
-      backgroundColor: '#017AB1',
-      color: '#fefefe',
+      backgroundColor: colorBgBlue,
+      color: colorBgBlueText,
     },
     bgLightBlue: {
-      backgroundColor: '#E9F8FF',
+      backgroundColor: colorBgLightBlue,
     },
     models: {
       overflowX: 'scroll',
@@ -87,7 +88,7 @@ function Home() {
       height: 'auto',
     },
     bgWhite: {
-      backgroundColor: '#FEFEFE',
+      backgroundColor: colorBgWhite,
       minHeight: '1rem',
     }
   };

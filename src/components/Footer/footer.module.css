@@ -1,22 +1,3 @@
-/* .bg1 {
-   background-color: #FEFEFE;
-   min-height: 1rem;
-} */
-
-.bg2 {
-   background-color: #38B033;
-   min-height: 0.8rem;
-}
-
-.bg3 {
-   background-color: #FEFEFE;
-   min-height: 1rem;
-}
-
-.bg4 {
-   background-color: #017AB1;
-}
-
 .footerMain {
    display: flex;
    flex-direction: row;

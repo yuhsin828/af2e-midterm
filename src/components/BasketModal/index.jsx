@@ -1,19 +1,20 @@
-import { Modal, Button, Select, theme } from "antd";
+import { Modal, Select, theme } from "antd";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItems, removeCartItems } from "../../redux/cartSlice";
 import { ShoppingCartOutlined, CloseOutlined } from '@ant-design/icons';
-
-import styles from "./cartmodal.module.css"
+import styles from "./cartmodal.module.css";
 import { selectCartItems } from "../../redux/cartSlice";
+
 const { Option } = Select;
 
 export default function CartModal({ isOpen, toggleModal }) {
-   const { token: { colorTextBase } } = theme.useToken();
+   const {
+      token: { colorBgBlue, colorBgBlueText },
+   } = theme.useToken();
 
    const dispatch = useDispatch();
    const cartItems = useSelector(selectCartItems);
-
    const handleCancel = () => toggleModal(!isOpen);
    const getTotalPrice = () => {
       return (cartItems.length > 0) ?
@@ -72,13 +73,14 @@ export default function CartModal({ isOpen, toggleModal }) {
                </li>
             ))
          )}
+
          <div className={styles.wrap}>
             總計
             <div className={styles.totalPrice}>${getTotalPrice()}</div>
          </div>
 
          <div className={styles.btnCtr}>
-            <Link className={styles.btn}>
+            <Link className={styles.btn} style={{ backgroundColor: colorBgBlue, color: colorBgBlueText }}>
                <ShoppingCartOutlined />
                <span style={{ paddingLeft: '0.5rem' }}>結帳</span>
             </Link>

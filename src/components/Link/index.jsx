@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
-import { theme } from "antd"
+import { Link } from "react-router-dom";
+import { theme } from "antd";
 
 export default function (props) {
    const {

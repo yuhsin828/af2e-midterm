@@ -1,11 +1,12 @@
 import { theme } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { Sun, Moon } from "../Icons";
-import styles from "./setcolormode.module.css"
+import styles from "./setcolormode.module.css";
 import { selectLightMode, setColorMode } from "../../redux/colorSlice";
 
 export default function SetColorMode() {
    const { token: { colorTextBase } } = theme.useToken();
+
    const lightMode = useSelector(selectLightMode);
    const dispatch = useDispatch();
 
@@ -14,7 +15,7 @@ export default function SetColorMode() {
    }
 
    return (
-      <div onClick={toggleColor} className={styles.cartSummary} >
+      <span onClick={toggleColor} className={styles.modeIcon} >
          {
             lightMode ? (
                <Sun color={colorTextBase} />
@@ -22,6 +23,6 @@ export default function SetColorMode() {
                <Moon color={colorTextBase} />
             )
          }
-      </div>
+      </span>
    );
 }

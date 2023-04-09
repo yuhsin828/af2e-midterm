@@ -1,6 +1,7 @@
 import NavLink from '../NavLink';
 import { Drawer, Divider, Dropdown } from 'antd';
 import { SearchOutlined, CustomerServiceOutlined, UserOutlined, DownOutlined } from '@ant-design/icons';
+import SetColorMode from "../SetColorMode";
 import styles from './navbar.module.css';
 
 export default function NavBar({ open, onClose }) {
@@ -86,6 +87,11 @@ export default function NavBar({ open, onClose }) {
             <NavLink to="#" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                 <UserOutlined className={styles.icon} />
                 <span className={styles.largeDNone}>會員</span>
+            </NavLink>
+            <Divider className={styles.largeDNone} />
+
+            <NavLink to="#" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                <SetColorMode />
             </NavLink>
         </>
     )

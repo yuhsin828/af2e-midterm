@@ -1,9 +1,7 @@
-import { Helmet } from "react-helmet-async"
+import { Helmet } from "react-helmet-async";
 import { theme } from 'antd';
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import ProductList from "../components/ProductList";
-import products from "../json/products.json";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function Activity() {
     const {
@@ -24,7 +22,7 @@ function Activity() {
             </Helmet>
             <Header className="layoutHeader" />
             <div className="layoutContent container">
-                {/* <ProductList products={products} /> */}
+                <div style={{ fontSize: '1.2rem', fontWeight: '700', textAlign: 'center', margin: '1rem 0' }}>敬請期待</div>
             </div>
             <Footer className="layoutFooter" />
         </div>

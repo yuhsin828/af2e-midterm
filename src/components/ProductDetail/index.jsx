@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
-import { Row, Col, Select } from "antd";
+import { Row, Col, Select, theme } from "antd";
 import { useSearchParams } from 'react-router-dom';
-import AddToCart from "../AddToCart"
-import styles from "./productdetail.module.css"
+import AddToCart from "../AddToCart";
+import styles from "./productdetail.module.css";
 const { Option } = Select;
 
 function ProductDetail({ product }) {
+   const {
+      token: { colorTextBlue },
+   } = theme.useToken();
+
    const [searchParams] = useSearchParams();
    const qtyFromBasket = searchParams.get('qtyFromBasket');
    const initQty = !!qtyFromBasket ? Number(qtyFromBasket) : product.countInStock > 0 ? 1 : 0
@@ -42,7 +46,7 @@ function ProductDetail({ product }) {
                <div className={styles.name} >
                   {product.name}
                </div>
-               <div className={styles.price} >
+               <div style={{ color: colorTextBlue }} className={styles.price} >
                   NT${product.price}
                </div>
                <div className={styles.description}>
