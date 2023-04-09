@@ -19,7 +19,6 @@ export default function ProductItem({ product }) {
                </div>
             </div>
          </Link>
-
       </div>
    );
 }

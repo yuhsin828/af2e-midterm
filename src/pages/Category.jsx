@@ -12,12 +12,15 @@ function Category() {
   const {
     token: { colorBgBase, colorTextBase },
   } = theme.useToken();
+
   const { categoryName } = useParams();
 
   const _products = products.filter(
     categoryName == "熱門精選" || categoryName == "新品上市"
       ? x => x?.hotNew === categoryName
-      : x => x?.category === categoryName
+      : categoryName == "所有商品"
+        ? x => x
+        : x => x?.category === categoryName
   );
 
   const title = _.startCase(categoryName) + `｜北捷線上商城`;
@@ -42,9 +45,9 @@ function Category() {
             md={{ span: 8 }}
             lg={{ span: 6 }}
             xxl={{ span: 4 }}
-            style={{ paddingRight: '0.5rem', }}
+            style={{ paddingRight: '0.5rem', margin: '1rem 0' }}
           >
-            <CategoryMenu />
+            <CategoryMenu categoryName={categoryName} />
           </Col>
           <Col
             span={24}
@@ -53,6 +56,7 @@ function Category() {
             xxl={{ span: 20 }}
             style={{ padding: 0 }}
           >
+            <div style={{ fontSize: '1.2rem', fontWeight: '700', textAlign: 'center', margin: '1rem 0' }}>{categoryName}</div>
             <ProductList products={_products} />
           </Col>
         </Row>

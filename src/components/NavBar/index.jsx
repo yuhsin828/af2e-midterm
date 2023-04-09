@@ -1,44 +1,46 @@
 import NavLink from '../NavLink';
-import { Drawer, Divider, Dropdown, Space } from 'antd';
-import { SearchOutlined, CustomerServiceOutlined, UserOutlined, DownOutlined, SmileOutlined } from '@ant-design/icons';
+import { Drawer, Divider, Dropdown } from 'antd';
+import { SearchOutlined, CustomerServiceOutlined, UserOutlined, DownOutlined } from '@ant-design/icons';
 import styles from './navbar.module.css';
 
 export default function NavBar({ open, onClose }) {
-
-    // const items = [
-    //     {
-    //         key: '1',
-    //         label: (
-    //             <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-    //                 北捷限定
-    //             </a>
-    //         ),
-    //     },
-    //     {
-    //         key: '2',
-    //         label: (
-    //             <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
-    //                 麗嬰
-    //             </a>
-    //         ),
-    //     },
-    //     {
-    //         key: '3',
-    //         label: (
-    //             <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
-    //                 新格子
-    //             </a>
-    //         ),
-    //     },
-    //     {
-    //         key: '4',
-    //         label: (
-    //             <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
-    //                 創玩設計
-    //             </a>
-    //         ),
-    //     },
-    // ];
+    const items = [
+        {
+            label:
+                <NavLink to="/categories/北捷模型" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                    北捷模型
+                </NavLink>,
+            key: '北捷模型',
+        },
+        {
+            label:
+                <NavLink to="/categories/北捷文創" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                    北捷文創
+                </NavLink>,
+            key: '北捷文創',
+        },
+        {
+            label:
+                <NavLink to="/categories/玩具小物" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                    玩具小物
+                </NavLink>,
+            key: '玩具小物',
+        },
+        {
+            label:
+                <NavLink to="/categories/生活文具" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                    生活文具
+                </NavLink>,
+            key: '生活文具',
+        },
+        {
+            label:
+                <NavLink to="/categories/嚴選咖啡" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                    嚴選咖啡
+                </NavLink>,
+            key: '嚴選咖啡',
+        },
+    ];
 
     const NavBarItem = () => (
         <>
@@ -47,14 +49,17 @@ export default function NavBar({ open, onClose }) {
             </NavLink>
             <Divider className={styles.largeDNone} />
 
-            <NavLink to="/categories/合作品牌" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+            {/* <NavLink to="/categories/合作品牌" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                 合作品牌
             </NavLink>
-            <Divider className={styles.largeDNone} />
+            <Divider className={styles.largeDNone} /> */}
 
-            <NavLink to="/categories/功能分類" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-                功能分類
-            </NavLink>
+            <Dropdown menu={{ items }}>
+                <a onClick={(e) => e.preventDefault()} className={styles.navLink}>
+                    功能分類
+                    <DownOutlined className={styles.dropDownIcon} />
+                </a>
+            </Dropdown>
             <Divider className={styles.largeDNone} />
 
             <NavLink to="/activities/優惠活動" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>

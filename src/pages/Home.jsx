@@ -14,14 +14,16 @@ function Home() {
   } = theme.useToken();
   const title = "北捷線上商城";
 
+  const { sm, md, lg, xl } = useBreakpoint();
+
+  const showItemCount = xl ? 4 : sm ? 3 : 4;
+
   const _hotProducts = products.filter(
     x => x?.hotNew === '熱門精選'
-  ).slice(0, 4);
+  ).slice(0, showItemCount);
   const _newProducts = products.filter(
     x => x?.hotNew === '新品上市'
-  ).slice(0, 4);
-
-  const { lg, xl } = useBreakpoint();
+  ).slice(0, showItemCount);
 
   const styles = {
     banner: {
@@ -41,7 +43,7 @@ function Home() {
       fontSize: '1.2rem',
       fontWeight: '700',
       margin: '1rem 0',
-      marginTop: lg ? '2rem' : '3rem',
+      marginTop: md ? '2rem' : '3rem',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
@@ -50,7 +52,7 @@ function Home() {
       margin: '0 0.5rem',
     },
     titleDivider: {
-      display: lg ? 'flex' : 'none',
+      display: md ? 'flex' : 'none',
       height: '0.8px',
       margin: '0 0.5rem',
       flex: 'auto',
@@ -62,8 +64,8 @@ function Home() {
       margin: '1rem 0.5rem',
     },
     moreBtn: {
-      flex: lg ? 'none' : 1,
-      padding: lg ? '0.5rem 3rem' : '0.6rem 0',
+      flex: md ? 'none' : 1,
+      padding: md ? '0.5rem 3rem' : '0.6rem 0',
       textDecoration: 'none',
       textAlign: 'center',
       backgroundColor: '#017AB1',
@@ -87,7 +89,7 @@ function Home() {
   };
 
   return (
-    <div className="">
+    <div>
       <Helmet>
         <title>{title}</title>
         <style>{`
@@ -98,7 +100,7 @@ function Home() {
         `}</style>
       </Helmet>
 
-      <Header className="" />
+      <Header />
 
       <Carousel autoplay>
         <div>
@@ -153,7 +155,7 @@ function Home() {
         </div>
       </div>
 
-      <Footer className="" />
+      <Footer />
     </div>
   );
 }
