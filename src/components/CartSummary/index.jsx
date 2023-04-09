@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Badge, theme } from "antd";
-import BasketModal from "../BasketModal"
+import CartModal from "../CartModal"
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { selectCartItems } from "../../redux/cartSlice";
 import styles from "./cartsummary.module.css"
@@ -23,7 +23,7 @@ export default function CartSummary() {
         </Badge>
       </div>
 
-      <BasketModal
+      <CartModal
         isOpen={isOpen}
         toggleModal={toggleOpen}
       />

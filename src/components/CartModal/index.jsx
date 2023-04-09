@@ -2,13 +2,13 @@ import { Modal, Button, Select, theme } from "antd";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItems, removeCartItems } from "../../redux/cartSlice";
+import { ShoppingCartOutlined, CloseOutlined } from '@ant-design/icons';
 
-import styles from "./basketmodal.module.css"
-import { CartIcon } from "../Icons";
+import styles from "./cartmodal.module.css"
 import { selectCartItems } from "../../redux/cartSlice";
 const { Option } = Select;
 
-export default function BasketModal({ isOpen, toggleModal }) {
+export default function CartModal({ isOpen, toggleModal }) {
    const { token: { colorTextBase } } = theme.useToken();
 
    const dispatch = useDispatch();
@@ -23,25 +23,25 @@ export default function BasketModal({ isOpen, toggleModal }) {
 
    return (
       <Modal
-         title="Shopping Basket"
+         title="購物車"
          open={isOpen}
          onCancel={handleCancel}
          footer={null}
       >
          {cartItems.length === 0 ? (
-            <div>Cart is empty</div>
+            <div>購物車是空的，快去購物吧！</div>
          ) : (
             cartItems.map(item => (
                <li key={item.id} className={styles.item}>
-                  <Link to={`/products/id/${item.id}?qtyFromBasket=${item.qty}`}>
+                  <Link to={`/products/${item.id}?qtyFromCart=${item.qty}`}>
                      <div onClick={handleCancel}>
                         <img className={styles.image} src={item.image} alt={item.name} />
                      </div>
                   </Link>
                   <div className={styles.content}>
                      <div className={styles.name}>{item.name}</div>
-                     <div>
-                        Qty: {"   "}
+                     <div className={styles.qty}>
+                        數量： {"   "}
                         <Select
                            defaultValue={item.qty}
                            onChange={(qty) => dispatch(addCartItems({
@@ -66,23 +66,23 @@ export default function BasketModal({ isOpen, toggleModal }) {
                         ${item.price * item.qty}
                      </div>
                      <div className={styles.delete} onClick={() => dispatch(removeCartItems(item.id))}>
-                        x
+                        <CloseOutlined />
                      </div>
                   </div>
                </li>
             ))
          )}
          <div className={styles.wrap}>
-            Total
+            總計
             <div className={styles.totalPrice}>${getTotalPrice()}</div>
          </div>
-         <Button
-            className={styles.btn}
-            type="primary"
-         >
-            <CartIcon color={"#ffffff"} />
-            <span style={{ marginLeft: 12 }}>Start Checkout</span>
-         </Button>
+
+         <div className={styles.btnCtr}>
+            <Link className={styles.btn}>
+               <ShoppingCartOutlined />
+               <span style={{ paddingLeft: '0.5rem' }}>結帳</span>
+            </Link>
+         </div>
       </Modal>
    );
 }
