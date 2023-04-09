@@ -10,6 +10,7 @@ function Product() {
    const {
       token: { colorBgBase, colorTextBase },
    } = theme.useToken();
+
    const { productId } = useParams();
    const product = products.find(
       (x) => x.id === productId
@@ -18,7 +19,7 @@ function Product() {
    return (
       <div className="mainLayout">
          <Helmet>
-            <title>product</title>
+            <title>{product.name}｜北捷線上商城</title>
             <style>{`
                body { 
                   background-color: ${colorBgBase}; 
@@ -26,14 +27,12 @@ function Product() {
                }
             `}</style>
          </Helmet>
-         <Header
-            className="layoutHeader"
-            title="Product Detail"
-            slogan="An example made by Vite."
-         />
+         <Header className="layoutHeader" />
+
          <div className="layoutContent container">
             <ProductDetail product={product} />
          </div>
+
          <Footer className="layoutFooter" />
       </div>
    );

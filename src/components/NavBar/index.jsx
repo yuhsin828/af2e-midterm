@@ -102,10 +102,11 @@ export default function NavBar({ open, onClose }) {
             </>
 
             <Drawer
-                title="北捷線上商城"
-                placement="right"
+                // title="北捷線上商城"
+                placement="left"
                 onClose={onClose}
                 open={open}
+                width="280"
             >
                 <div className={styles.drawer}>
                     <NavBarItem />
