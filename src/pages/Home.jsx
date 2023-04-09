@@ -85,6 +85,10 @@ function Home() {
     modelImg: {
       width: '15rem',
       height: 'auto',
+    },
+    bgWhite: {
+      backgroundColor: '#FEFEFE',
+      minHeight: '1rem',
     }
   };
 
@@ -154,6 +158,7 @@ function Home() {
           </Link>
         </div>
       </div>
+      <div style={styles.bgWhite}></div>
 
       <Footer />
     </div>

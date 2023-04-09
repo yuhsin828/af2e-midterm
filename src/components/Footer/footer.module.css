@@ -1,16 +1,16 @@
-.bg1 {
+/* .bg1 {
    background-color: #FEFEFE;
-   min-height: 18px;
-}
+   min-height: 1rem;
+} */
 
 .bg2 {
    background-color: #38B033;
-   min-height: 15px;
+   min-height: 0.8rem;
 }
 
 .bg3 {
    background-color: #FEFEFE;
-   min-height: 18px;
+   min-height: 1rem;
 }
 
 .bg4 {
@@ -34,7 +34,7 @@
    max-width: 160px;
 }
 
-.navItem{
+.navItem {
    text-align: end;
    margin: 0.4rem;
 }

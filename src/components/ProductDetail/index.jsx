@@ -17,7 +17,7 @@ function ProductDetail({ product }) {
 
    return (
       <Row gutter={[0, 32]}
-         style={{ justifyContent: 'center' }}
+         className={styles.main}
       >
          <Col
             span={24}

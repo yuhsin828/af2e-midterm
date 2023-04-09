@@ -51,7 +51,7 @@ body {
     "content"
     "footer";
   grid-template-rows: auto 1fr auto;
-  gap: 1em;
+  gap: 1rem;
   margin-bottom: 0;
   padding-bottom: 0;
 }

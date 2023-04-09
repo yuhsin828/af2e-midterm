@@ -12,7 +12,7 @@ export default function Footer() {
             backgroundColor: colorBgFooter,
             color: colorTextFooter,
         }}>
-            <div className={styles.bg1}></div>
+            {/* <div className={styles.bg1}></div> */}
             <div className={styles.bg2}></div>
             <div className={styles.bg3}></div>
             <div className={styles.bg4}>

@@ -2,7 +2,7 @@ import { notification } from "antd"
 import { useDispatch } from "react-redux";
 import { addCartItems } from "../../redux/cartSlice";
 import styles from "./addtocart.module.css"
-import { ShoppingCartOutlined } from "@ant-design/icons";
+import { ShoppingCartOutlined, CheckOutlined } from "@ant-design/icons";
 import Link from "../Link"
 
 export default function AddToCart({ product, qty }) {
@@ -10,9 +10,12 @@ export default function AddToCart({ product, qty }) {
 
   const openNotification = () => {
     notification.open({
-      message: 'Shopping Notification',
+      message: '加入購物車',
       description:
-        `${qty} ${qty > 1 ? "pieces" : "piece"} of ${product.name} ${qty > 1 ? "have" : "has"} been added to your cart.`,
+        `${product.name}×${qty} 已成功加入購物車`,
+      icon: (
+        <CheckOutlined style={{ color: '#38B033', }} />
+      ),
       placement: 'bottomRight'
     });
   };
