@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProductList from "../components/ProductList";
 import products from "../json/products.json";
+import categories from "../json/categories.json";
 import CategoryMenu from "../components/CategoryMenu";
 
 function Category() {
@@ -23,7 +24,11 @@ function Category() {
         : x => x?.category === categoryName
   );
 
-  const title = _.startCase(categoryName) + `｜北捷線上商城`;
+  const categoryNameCH = categories.find(
+    x => x.en == categoryName
+  );
+
+  const title = _.startCase(categoryNameCH.ch) + `｜北捷線上商城`;
 
   return (
     <div className="mainLayout">
@@ -56,7 +61,7 @@ function Category() {
             xxl={{ span: 20 }}
             style={{ padding: 0 }}
           >
-            {/* <div style={{ fontSize: '1.2rem', fontWeight: '700', textAlign: 'center', margin: '1rem 0' }}>{categoryName}</div> */}
+            <div style={{ fontSize: '1.2rem', fontWeight: '700', textAlign: 'center', margin: '1rem 0' }}>{categoryNameCH.ch}</div>
             <ProductList products={_products} />
           </Col>
         </Row>
