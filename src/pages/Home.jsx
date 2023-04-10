@@ -43,7 +43,7 @@ function Home() {
       fontSize: '1.2rem',
       fontWeight: '700',
       margin: '1rem 0',
-      marginTop: md ? '2rem' : '3rem',
+      marginTop: md ? '3rem' : '4rem',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
@@ -87,10 +87,6 @@ function Home() {
       width: '15rem',
       height: 'auto',
     },
-    bgWhite: {
-      backgroundColor: colorBgWhite,
-      minHeight: '1rem',
-    }
   };
 
   return (
@@ -159,7 +155,6 @@ function Home() {
           </Link>
         </div>
       </div>
-      <div style={styles.bgWhite}></div>
 
       <Footer />
     </div>

@@ -18,9 +18,9 @@ export default function SetColorMode() {
       <span onClick={toggleColor} className={styles.modeIcon} >
          {
             lightMode ? (
-               <Sun color={colorTextBase} />
+               <Sun color={colorTextBase} className={styles.icon} />
             ) : (
-               <Moon color={colorTextBase} />
+               <Moon color={colorTextBase} className={styles.icon} />
             )
          }
       </span>

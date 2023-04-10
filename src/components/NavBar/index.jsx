@@ -115,15 +115,15 @@ export default function NavBar({ open, onClose }) {
 
     const NavBarIcon = () => (
         <>
-            <NavLink to="#" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+            <NavLink to="#" className={styles.navIcon}>
                 <SearchOutlined className={styles.icon} />
             </NavLink>
 
-            <NavLink to="#" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+            <NavLink to="#" className={styles.navIcon}>
                 <CustomerServiceOutlined className={styles.icon} />
             </NavLink>
 
-            <NavLink to="#" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+            <NavLink to="#" className={styles.navIcon}>
                 <SetColorMode />
             </NavLink>
         </>
@@ -152,8 +152,9 @@ export default function NavBar({ open, onClose }) {
                 open={open}
                 width="280"
                 footer={<NavBarIcon />}
+                className={styles.drawer}
             >
-                <div className={styles.drawer}>
+                <div className={styles.drawerMenu}>
                     <SubMenu />
                     <Divider className={styles.largeDNone} />
 

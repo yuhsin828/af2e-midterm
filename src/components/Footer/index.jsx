@@ -12,7 +12,7 @@ export default function Footer() {
             backgroundColor: colorBgBlue,
             color: colorBgBlueText,
         }}>
-            {/* <div className={styles.bg1}></div> */}
+            <div style={{ backgroundColor: colorBgWhite, minHeight: '1rem' }}></div>
             <div style={{ backgroundColor: colorBgGreen, minHeight: '0.8rem' }}></div>
             <div style={{ backgroundColor: colorBgWhite, minHeight: '1rem' }}></div>
             <div>

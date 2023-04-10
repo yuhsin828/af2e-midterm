@@ -4,14 +4,14 @@ const darkTheme = {
   algorithm: theme.darkAlgorithm,
   token: {
     colorBgBase: "#141414",
-    colorTextBase: "#fefefe",
+    colorTextBase: "#f4f4f4",
     colorBgHeader: "#111a20",
     colorBgBlue: "#08567b",
-    colorBgBlueText: "#fefefe",
+    colorBgBlueText: "#f4f4f4",
     colorBgLightBlue: "#C8DBE4",
     colorBgWhite: "#f4f4f4",
     colorBgGreen: "#32A02E",
-    colorTextBlue: "#fefefe",
+    colorTextBlue: "#f4f4f4",
   },
   // components: {
   //   Button: {
