@@ -10,7 +10,7 @@ const { useBreakpoint } = Grid;
 
 function Home() {
   const {
-    token: { colorBgBase, colorTextBase, colorBgBlue, colorBgBlueText, colorBgLightBlue, colorBgWhite },
+    token: { colorBgBase, colorTextBase, colorBgBlue, colorBgBlueText, colorBgLightBlue },
   } = theme.useToken();
   const title = "北捷線上商城";
 
@@ -68,6 +68,7 @@ function Home() {
       flex: md ? 'none' : 1,
       padding: md ? '0.5rem 3rem' : '0.6rem 0',
       textDecoration: 'none',
+      fontSize: '0.8rem',
       textAlign: 'center',
       backgroundColor: colorBgBlue,
       color: colorBgBlueText,

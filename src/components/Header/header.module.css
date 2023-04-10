@@ -29,11 +29,6 @@
   padding: 0 1rem;
 }
 
-.modeIcon {
-  font-size: 1.5rem;
-  padding: 0 1rem;
-}
-
 @media (min-width: 768px) {
   .hamburgerIcon {
     display: none;

@@ -9,9 +9,10 @@
 
 .navLink {
   font-size: 0.9rem;
+  font-weight: 700;
   text-align: center;
   margin-right: 0;
-  opacity: 0.6;
+  opacity: 0.8;
   transition: all 0.5s ease-in-out;
 }
 
