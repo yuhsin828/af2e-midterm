@@ -16,9 +16,9 @@ function Category() {
   const { categoryName } = useParams();
 
   const _products = products.filter(
-    categoryName == "熱門精選" || categoryName == "新品上市"
+    categoryName == "hot" || categoryName == "new"
       ? x => x?.hotNew === categoryName
-      : categoryName == "所有商品"
+      : categoryName == "all"
         ? x => x
         : x => x?.category === categoryName
   );
@@ -56,7 +56,7 @@ function Category() {
             xxl={{ span: 20 }}
             style={{ padding: 0 }}
           >
-            <div style={{ fontSize: '1.2rem', fontWeight: '700', textAlign: 'center', margin: '1rem 0' }}>{categoryName}</div>
+            {/* <div style={{ fontSize: '1.2rem', fontWeight: '700', textAlign: 'center', margin: '1rem 0' }}>{categoryName}</div> */}
             <ProductList products={_products} />
           </Col>
         </Row>

@@ -1,7 +1,7 @@
 [
   {
     "id": "0cKXRtlH",
-    "category": "生活文具",
+    "category": "life",
     "name": "車廂3D造型悠遊卡-381型電聯車",
     "price": 690,
     "image": "/images/products/0cKXRtlH.png",
@@ -12,95 +12,95 @@
   },
   {
     "id": "1wR6m9Ue",
-    "category": "生活文具",
+    "category": "life",
     "name": "車廂3D造型悠遊卡-歡樂版",
     "price": 490,
     "image": "/images/products/1wR6m9Ue.png",
     "description": "商品不須安裝電池，感應閘門即可發出聲光效果，外觀設計以25週年列車聲光立體悠遊卡造型，採用藝術家塗鴉色塊設計概念，呈現晴朗鮮明視覺感，並搭配捷運轉乘音樂，打造歡樂氣氛。",
     "currency": "TWD",
     "countInStock": 3,
-    "hotNew": "熱門精選"
+    "hotNew": "hot"
   },
   {
     "id": "3nL5XLnS",
-    "category": "生活文具",
+    "category": "life",
     "name": "識別證伸縮拉環-捷運列車正/側面",
     "price": 120,
     "image": "/images/products/3nL5XLnS.png",
     "description": "伸縮拉環-伸縮設計的吊環不僅使用方便更有防盜的功用，實用又好看。",
     "currency": "TWD",
     "countInStock": 6,
-    "hotNew": "熱門精選"
+    "hotNew": "hot"
   },
   {
     "id": "4oV0aqhy",
-    "category": "生活文具",
+    "category": "life",
     "name": "車票夾-路網圖/兒童新樂園/動物園",
     "price": 150,
     "image": "/images/products/4oV0aqhy.png",
     "description": "TPU環保材質，可收納悠遊卡、門禁卡及一般制式卡片大小都能放得進去，強調個人風格，實用流行兼顧，通勤族必備商品。",
     "currency": "TWD",
     "countInStock": 3,
-    "hotNew": "熱門精選"
+    "hotNew": "hot"
   },
   {
     "id": "5uWpwi5E",
-    "category": "北捷文創",
+    "category": "creative",
     "name": "捷運路網吃喝玩樂地圖手帕",
     "price": 200,
     "image": "/images/products/5uWpwi5E.png",
     "description": "以台北捷運路網為基礎，擬人化的可愛動物，以台北人的視角，帶著觀光客探險美麗豐富的台北城市，色彩繽紛，日本進口顏料印刷，細緻純棉，品質超優！",
     "currency": "TWD",
     "countInStock": 4,
-    "hotNew": "熱門精選"
+    "hotNew": "hot"
   },
   {
     "id": "6qgqyesS",
-    "category": "北捷文創",
+    "category": "creative",
     "name": "捷運LED鑰匙圈",
     "price": 220,
     "image": "/images/products/6qgqyesS.png",
     "description": "捷運列車造型結合鑰匙圈，車頭可發光照明，生活實用小物。",
     "currency": "TWD",
     "countInStock": 5,
-    "hotNew": "熱門精選"
+    "hotNew": "hot"
   },
   {
     "id": "7JoY677o",
-    "category": "北捷文創",
+    "category": "creative",
     "name": "立體木質可動鑰匙扣-381型",
     "price": 100,
     "image": "/images/products/7JoY677o.png",
     "description": "以Q版台北捷運高運量381型車廂造型，搭配可愛的動物乘客🐱🐰🐮。透過抽拉式動物木板巧思，呈現列車行駛中車廂內畫面，為繁忙生活增添童趣。",
     "currency": "TWD",
     "countInStock": 5,
-    "hotNew": "熱門精選"
+    "hotNew": "hot"
   },
   {
     "id": "9Zlmx9s8",
-    "category": "玩具小物",
+    "category": "plaything",
     "name": "捷運拼圖軌道車-370/381款",
     "price": 299,
     "image": "/images/products/9Zlmx9s8.png",
     "description": "捷運周邊景點化身可愛拼圖，將370/381型捷運列車上發條後，可以在拼圖軌道上恣意悠遊，拼圖更可以變換組合不同軌道。",
     "currency": "TWD",
     "countInStock": 8,
-    "hotNew": "新品上市"
+    "hotNew": "new"
   },
   {
     "id": "AGYzZE6K",
-    "category": "北捷模型",
+    "category": "model",
     "name": "立體造型組合拼木-381型列車",
     "price": 180,
     "image": "/images/products/AGYzZE6K.png",
     "description": "以台北捷運高運量381型列車造型設計，首次與新格子創意合作，推出🔨木質組裝列車模型，透過DIY組裝享受手作的樂趣，鐵道迷們絕不能錯過！",
     "currency": "TWD",
     "countInStock": 2,
-    "hotNew": "熱門精選"
+    "hotNew": "hot"
   },
   {
     "id": "BSgMZXmc",
-    "category": "玩具小物",
+    "category": "plaything",
     "name": "麻吉貓親子彩繪列車禮盒",
     "price": 500,
     "image": "/images/products/BSgMZXmc.png",
@@ -111,7 +111,7 @@
   },
   {
     "id": "DSHO8hUz",
-    "category": "生活文具",
+    "category": "life",
     "name": "雙層陶瓷杯-臺北捷運路網杯",
     "price": 300,
     "image": "/images/products/DSHO8hUz.png",
@@ -122,7 +122,7 @@
   },
   {
     "id": "E7fN8KOS",
-    "category": "生活文具",
+    "category": "life",
     "name": "HYDY聯名限定保溫瓶(尤加利)",
     "price": 1490,
     "image": "/images/products/E7fN8KOS.png",
@@ -133,51 +133,51 @@
   },
   {
     "id": "FybqLTPV",
-    "category": "生活文具",
+    "category": "life",
     "name": "Brunch Brother聯名吐司收納包",
     "price": 490,
     "image": "/images/products/FybqLTPV.png",
     "description": "Brunch Brother 與 台北捷運公司聯名的小型收納包上市啦！刺繡的設計讓臉部表情更加可愛生動，幫吐司穿上捷運元素的帽子和襯衫，看起來療癒，附有小收納袋，可以放入信用卡、零錢、耳機等商品，非常實用。",
     "currency": "TWD",
     "countInStock": 8,
-    "hotNew": "新品上市"
+    "hotNew": "new"
   },
   {
     "id": "GWsCHXPv",
-    "category": "生活文具",
+    "category": "life",
     "name": "Brunch Brother聯名烤吐司收納包",
     "price": 490,
     "image": "/images/products/GWsCHXPv.png",
     "description": "Brunch Brother 與 台北捷運公司聯名的小型收納包上市啦！刺繡的設計讓臉部表情更加可愛生動，幫吐司穿上捷運元素的帽子和襯衫，看起來療癒，附有小收納袋，可以放入信用卡、零錢、耳機等商品，非常實用。",
     "currency": "TWD",
     "countInStock": 9,
-    "hotNew": "新品上市"
+    "hotNew": "new"
   },
   {
     "id": "I2d1V3v8",
-    "category": "生活文具",
+    "category": "life",
     "name": "Brunch Brother聯名平板包",
     "price": 690,
     "image": "/images/products/I2d1V3v8.png",
     "description": "Brunch Brother 與 台北捷運公司聯名的小型收納包上市啦！可愛的吐司與他的朋友們，看起來非常歡樂以及可愛，內裡放入柔軟的聚酯以及海綿，能抵抗衝擊以及髒汙，將心愛的平板電腦保護得好好的。",
     "currency": "TWD",
     "countInStock": 7,
-    "hotNew": "新品上市"
+    "hotNew": "new"
   },
   {
     "id": "Jkg6fnVy",
-    "category": "生活文具",
+    "category": "life",
     "name": "桃捷列車軟殼包",
     "price": 280,
     "image": "/images/products/Jkg6fnVy.png",
     "description": "將桃園捷運直達車設計成EVA 軟殼包 ，可作為外出旅遊置放充電插頭、線材、 記憶卡、 隨身碟、手機、硬碟外接盒 等小物品，同時也可做為學生族群所使用的鉛筆盒。",
     "currency": "TWD",
     "countInStock": 9,
-    "hotNew": "新品上市"
+    "hotNew": "new"
   },
   {
     "id": "KdBsuFM9",
-    "category": "北捷模型",
+    "category": "model",
     "name": "精緻高運量電聯車模型",
     "price": 6600,
     "image": "/images/products/KdBsuFM9.png",
@@ -188,7 +188,7 @@
   },
   {
     "id": "LDC75wNM",
-    "category": "北捷模型",
+    "category": "model",
     "name": "捷運381型電聯車模型",
     "price": 1500,
     "image": "/images/products/LDC75wNM.png",
@@ -199,7 +199,7 @@
   },
   {
     "id": "MFrvgXh8",
-    "category": "北捷模型",
+    "category": "model",
     "name": "精緻文湖線電聯車模型",
     "price": 10800,
     "image": "/images/products/MFrvgXh8.png",
@@ -210,7 +210,7 @@
   },
   {
     "id": "O9NnJawq",
-    "category": "北捷模型",
+    "category": "model",
     "name": "龐巴迪列車水晶文鎮禮盒",
     "price": 3600,
     "image": "/images/products/O9NnJawq.png",

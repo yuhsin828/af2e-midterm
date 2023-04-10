@@ -19,10 +19,10 @@ function Home() {
   const showItemCount = xl ? 4 : sm ? 3 : 4;
 
   const _hotProducts = products.filter(
-    x => x?.hotNew === '熱門精選'
+    x => x?.hotNew === 'hot'
   ).slice(0, showItemCount);
   const _newProducts = products.filter(
-    x => x?.hotNew === '新品上市'
+    x => x?.hotNew === 'new'
   ).slice(0, showItemCount);
 
   const styles = {
@@ -122,7 +122,7 @@ function Home() {
         <div style={styles.contentTitle}>熱門精選</div>
         <ProductList products={_hotProducts} />
         <div style={styles.btnCtr}>
-          <Link to="/categories/熱門精選" style={styles.moreBtn}>
+          <Link to="/categories/hot" style={styles.moreBtn}>
             查看更多
           </Link>
         </div>
@@ -133,7 +133,7 @@ function Home() {
         </div>
         <ProductList products={_newProducts} />
         <div style={styles.btnCtr}>
-          <Link to="/categories/新品上市" style={styles.moreBtn}>
+          <Link to="/categories/new" style={styles.moreBtn}>
             查看更多
           </Link>
         </div>
@@ -150,7 +150,7 @@ function Home() {
           <Link to="/products/LDC75wNM" style={styles.modelCtr}>
             <img style={styles.modelImg} src="/images/modelImg_3.png" alt="modelImg" />
           </Link>
-          <Link to="/categories/北捷模型" style={styles.modelCtr}>
+          <Link to="/categories/model" style={styles.modelCtr}>
             <img style={styles.modelImg} src="/images/modelImg_more.png" alt="modelImg" />
           </Link>
         </div>

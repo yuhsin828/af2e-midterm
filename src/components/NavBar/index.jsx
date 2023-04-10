@@ -79,35 +79,35 @@ export default function NavBar({ open, onClose }) {
 
     const SubMenu = () => (
         <>
-            <NavLink to="/categories/所有商品" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+            <NavLink to="/categories/all" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                 <AppstoreOutlined className={styles.icon} />所有商品
             </NavLink>
             <Divider />
-            <NavLink to="/categories/熱門精選" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+            <NavLink to="/categories/hot" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                 <FireOutlined className={styles.icon} />熱門精選
             </NavLink>
             <Divider />
-            <NavLink to="/categories/新品上市" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+            <NavLink to="/categories/new" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                 <SoundOutlined className={styles.icon} />新品上市
             </NavLink>
             <Divider />
-            <NavLink to="/categories/北捷模型" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+            <NavLink to="/categories/model" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                 北捷模型
             </NavLink>
             <Divider />
-            <NavLink to="/categories/北捷文創" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+            <NavLink to="/categories/creative" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                 北捷文創
             </NavLink>
             <Divider />
-            <NavLink to="/categories/玩具小物" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+            <NavLink to="/categories/plaything" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                 玩具小物
             </NavLink>
             <Divider />
-            <NavLink to="/categories/生活文具" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+            <NavLink to="/categories/life" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                 生活文具
             </NavLink>
             <Divider />
-            <NavLink to="/categories/嚴選咖啡" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+            <NavLink to="/categories/coffee" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                 嚴選咖啡
             </NavLink>
         </>
@@ -132,7 +132,7 @@ export default function NavBar({ open, onClose }) {
     return (
         <>
             <div className={styles.navSection}>
-                <NavLink to="/categories/所有商品" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                <NavLink to="/categories/all" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                     商品列表
                 </NavLink>
                 <NavLink to="/activities" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>

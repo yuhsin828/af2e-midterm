@@ -5,21 +5,21 @@ import Link from '../Link';
 const items = [
     {
         label:
-            <Link to="/categories/所有商品">
+            <Link to="/categories/all">
                 所有商品
             </Link>,
         key: '所有商品',
     },
     {
         label:
-            <Link to="/categories/熱門精選">
+            <Link to="/categories/hot">
                 熱門精選
             </Link>,
         key: '熱門精選',
     },
     {
         label:
-            <Link to="/categories/新品上市">
+            <Link to="/categories/new">
                 新品上市
             </Link>,
         key: '新品上市',
@@ -30,35 +30,35 @@ const items = [
         children: [
             {
                 label:
-                    <Link to="/categories/北捷模型">
+                    <Link to="/categories/model">
                         北捷模型
                     </Link>,
                 key: '北捷模型',
             },
             {
                 label:
-                    <Link to="/categories/北捷文創">
+                    <Link to="/categories/creative">
                         北捷文創
                     </Link>,
                 key: '北捷文創',
             },
             {
                 label:
-                    <Link to="/categories/玩具小物">
+                    <Link to="/categories/plaything">
                         玩具小物
                     </Link>,
                 key: '玩具小物',
             },
             {
                 label:
-                    <Link to="/categories/生活文具">
+                    <Link to="/categories/life">
                         生活文具
                     </Link>,
                 key: '生活文具',
             },
             {
                 label:
-                    <Link to="/categories/嚴選咖啡">
+                    <Link to="/categories/coffee">
                         嚴選咖啡
                     </Link>,
                 key: '嚴選咖啡',
