@@ -22,7 +22,7 @@ function Member() {
             </Helmet>
             <Header className="layoutHeader" />
             <div className="layoutContent container">
-                <div style={{ fontSize: '1.2rem', fontWeight: '700', textAlign: 'center', margin: '1rem 0' }}>會員專區</div>
+                <div style={{ fontSize: '1.4rem', fontWeight: '600', textAlign: 'center', margin: '1rem 0' }}>會員專區</div>
             </div>
             <Footer className="layoutFooter" />
         </div>

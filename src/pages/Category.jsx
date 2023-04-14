@@ -61,7 +61,7 @@ function Category() {
             xxl={{ span: 20 }}
             style={{ padding: 0 }}
           >
-            <div style={{ fontSize: '1.2rem', fontWeight: '700', textAlign: 'center', margin: '1rem 0' }}>{categoryNameCH.ch}</div>
+            <div style={{ fontSize: '1.4rem', fontWeight: '600', textAlign: 'center', margin: '1rem 0', fontFamily: 'SweiSansCJKtc-Regular' }}>{categoryNameCH.ch}</div>
             <ProductList products={_products} />
           </Col>
         </Row>

@@ -1,5 +1,10 @@
 /* General Styles */
 /* RWD Container */
+@font-face {
+  font-family: SweiSansCJKtc-Regular;
+  src: url(https://cdn.jsdelivr.net/gh/max32002/swei-sans@2.102/WebFont/CJK%20TC/SweiSansCJKtc-Regular.woff2) format("woff2"), url(https://cdn.jsdelivr.net/gh/max32002/swei-sans@2.102/WebFont/CJK%20TC/SweiSansCJKtc-Regular.woff) format("woff");
+}
+
 .container {
   width: 100%;
   margin-left: auto;
@@ -40,6 +45,7 @@
 body {
   font-size: 16px;
   line-height: 1.6;
+  font-family: SweiSansCJKtc-Regular, sans-serif;
 }
 
 /* main layout */

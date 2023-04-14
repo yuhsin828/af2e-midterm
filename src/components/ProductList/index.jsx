@@ -5,7 +5,7 @@ export default function ProductList({ products }) {
   return (
     !products[0]
       ?
-      <div style={{ fontSize: '0.8rem', display: 'flex', justifyContent: 'center', margin: '1rem 0' }}>
+      <div style={{ fontFamily: 'SweiSansCJKtc-Regular', fontSize: '0.9rem', display: 'flex', justifyContent: 'center', margin: '1rem 0' }}>
         新商品預備中，敬請期待
       </div>
       :

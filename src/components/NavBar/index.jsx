@@ -1,5 +1,5 @@
 import NavLink from '../NavLink';
-import { Drawer, Divider, Dropdown, Menu } from 'antd';
+import { Drawer, Divider } from 'antd';
 import { SearchOutlined, CustomerServiceOutlined, UserOutlined, GiftOutlined, FireOutlined, AppstoreOutlined, SoundOutlined } from '@ant-design/icons';
 import SetColorMode from "../SetColorMode";
 import styles from './navbar.module.css';

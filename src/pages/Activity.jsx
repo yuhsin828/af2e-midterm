@@ -22,7 +22,7 @@ function Activity() {
             </Helmet>
             <Header className="layoutHeader" />
             <div className="layoutContent container">
-                <div style={{ fontSize: '1.2rem', fontWeight: '700', textAlign: 'center', margin: '1rem 0' }}>優惠活動，敬請期待</div>
+                <div style={{ fontSize: '1.4rem', fontWeight: '600', textAlign: 'center', margin: '1rem 0' }}>優惠活動，敬請期待</div>
             </div>
             <Footer className="layoutFooter" />
         </div>

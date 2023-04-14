@@ -1,6 +1,7 @@
 import { Menu } from 'antd';
 import { useState } from 'react';
 import Link from '../Link';
+import styles from './categorymenu.module.css';
 
 const items = [
     {
@@ -164,6 +165,7 @@ const CategoryMenu = ({ categoryName }) => {
             // selectedKeys={[current]}
             mode="inline"
             items={items}
+            className={styles.menu}
         />
     );
 };

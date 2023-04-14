@@ -1,6 +1,7 @@
 .drawerMenu {
   display: flex;
   flex-direction: column;
+  font-family: SweiSansCJKtc-Regular;
 }
 
 .navSection {
@@ -8,8 +9,8 @@
 }
 
 .navLink {
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 1rem;
+  /* font-weight: 700; */
   text-align: center;
   margin-right: 0;
   opacity: 0.8;
@@ -27,13 +28,8 @@
 
 .navIcon {
   composes: navLink;
-  font-size: 1rem;
+  font-size: 1.2rem;
   opacity: 1;
-}
-
-.dropDownIcon {
-  margin-left: 0.4rem;
-  font-size: 0.6rem;
 }
 
 .icon {

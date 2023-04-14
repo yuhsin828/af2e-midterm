@@ -6,6 +6,7 @@
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 0.8px #888888 solid;
+  font-family: SweiSansCJKtc-Regular;
 }
 
 .image {
@@ -20,48 +21,55 @@
 }
 
 .name {
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  /* font-weight: 600; */
 }
 
 .qty {
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   opacity: 0.8;
 }
 
 .price {
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 600;
   text-align: right;
 }
 
 .delete {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   opacity: 0.4;
   text-align: right;
   cursor: pointer;
 }
 
 .wrap {
-  font-size: 0.6rem;
   text-align: right;
+  font-family: SweiSansCJKtc-Regular;
+}
+
+.total{
+  font-size: 0.8rem;
+  opacity: 0.8;
 }
 
 .totalPrice {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
+  opacity: 1;
 }
 
 .btnCtr {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+  font-family: SweiSansCJKtc-Regular;
 }
 
 .btn {
   flex: 1;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-decoration: none;
   padding: 0.5rem 3rem;
 }

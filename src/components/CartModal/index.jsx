@@ -75,7 +75,7 @@ export default function CartModal({ isOpen, toggleModal }) {
          )}
 
          <div className={styles.wrap}>
-            總計
+            <div className={styles.total}>總計</div>
             <div className={styles.totalPrice}>${getTotalPrice()}</div>
          </div>
 

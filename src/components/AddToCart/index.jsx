@@ -20,7 +20,8 @@ export default function AddToCart({ product, qty }) {
       icon: (
         <CheckOutlined style={{ color: colorBgGreen }} />
       ),
-      placement: 'bottomRight'
+      placement: 'bottomRight',
+      style: { fontFamily: 'SweiSansCJKtc-Regular' }
     });
   };
 

@@ -40,7 +40,7 @@ function Product() {
             </div>
             {/* <div style={{ backgroundColor: '#E9F8FF' }}>
                <div className="container">
-                  <div style={{ fontSize: '1.2rem', fontWeight: '700', textAlign: 'center', padding: '1rem 0' }}>相關商品</div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: '600', textAlign: 'center', padding: '1rem 0' }}>相關商品</div>
                   <ProductList products={_relativeProduct} />
                </div>
             </div> */}
