@@ -1,171 +1,89 @@
-import { Menu } from 'antd';
-import { useState } from 'react';
-import Link from '../Link';
+import { Menu, theme } from 'antd';
+import NavLink from '../NavLink';
+import { FireOutlined, AppstoreOutlined, SoundOutlined, ApartmentOutlined } from '@ant-design/icons';
 import styles from './categorymenu.module.css';
 
 const items = [
     {
         label:
-            <Link to="/categories/all">
-                所有商品
-            </Link>,
+            <NavLink to="/categories/all" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                <AppstoreOutlined className={styles.icon} />所有商品
+            </NavLink>,
         key: '所有商品',
     },
     {
         label:
-            <Link to="/categories/hot">
-                熱門精選
-            </Link>,
+            <NavLink to="/categories/hot" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                <FireOutlined className={styles.icon} />熱門精選
+            </NavLink>,
         key: '熱門精選',
     },
     {
         label:
-            <Link to="/categories/new">
-                新品上市
-            </Link>,
+            <NavLink to="/categories/new" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                <SoundOutlined className={styles.icon} />新品上市
+            </NavLink>,
         key: '新品上市',
     },
     {
-        label: '依功能分類',
+        label:
+            <NavLink to="#" className={styles.navLink}>
+                <ApartmentOutlined className={styles.icon} />依功能分類
+            </NavLink>,
         key: '依功能分類',
         children: [
             {
                 label:
-                    <Link to="/categories/model">
+                    <NavLink to="/categories/model" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                         北捷模型
-                    </Link>,
+                    </NavLink>,
                 key: '北捷模型',
             },
             {
                 label:
-                    <Link to="/categories/creative">
+                    <NavLink to="/categories/creative" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                         北捷文創
-                    </Link>,
+                    </NavLink>,
                 key: '北捷文創',
             },
             {
                 label:
-                    <Link to="/categories/plaything">
+                    <NavLink to="/categories/plaything" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                         玩具小物
-                    </Link>,
+                    </NavLink>,
                 key: '玩具小物',
             },
             {
                 label:
-                    <Link to="/categories/life">
+                    <NavLink to="/categories/life" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                         生活文具
-                    </Link>,
+                    </NavLink>,
                 key: '生活文具',
             },
             {
                 label:
-                    <Link to="/categories/coffee">
+                    <NavLink to="/categories/coffee" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                         嚴選咖啡
-                    </Link>,
+                    </NavLink>,
                 key: '嚴選咖啡',
             },
         ]
     },
-    // {
-    //     label: '依合作品牌',
-    //     key: '依合作品牌',
-    //     children: [
-    //         {
-    //             label:
-    //                 <Link to="/categories/北捷限定">
-    //                     北捷限定
-    //                 </Link>,
-    //             key: '北捷限定',
-    //         },
-    //         {
-    //             label:
-    //                 <Link to="/categories/麗嬰">
-    //                     麗嬰
-    //                 </Link>,
-    //             key: '麗嬰',
-    //         },
-    //         {
-    //             label:
-    //                 <Link to="/categories/新格子">
-    //                     新格子
-    //                 </Link>,
-    //             key: '新格子',
-    //         },
-    //         {
-    //             label:
-    //                 <Link to="/categories/創玩設計">
-    //                     創玩設計
-    //                 </Link>,
-    //             key: '創玩設計',
-    //         },
-    //         {
-    //             label:
-    //                 <Link to="/categories/萌萌麻吉貓">
-    //                     萌萌麻吉貓
-    //                 </Link>,
-    //             key: '萌萌麻吉貓',
-    //         },
-    //         {
-    //             label:
-    //                 <Link to="/categories/Brunch Brother">
-    //                     Brunch Brother
-    //                 </Link>,
-    //             key: 'Brunch Brother',
-    //         },
-    //         {
-    //             label:
-    //                 <Link to="/categories/生活工場">
-    //                     生活工場
-    //                 </Link>,
-    //             key: '生活工場',
-    //         },
-    //         {
-    //             label:
-    //                 <Link to="/categories/日本JR EAST">
-    //                     日本JR EAST
-    //                 </Link>,
-    //             key: '日本JR EAST',
-    //         },
-    //         {
-    //             label:
-    //                 <Link to="/categories/悠遊卡">
-    //                     悠遊卡
-    //                 </Link>,
-    //             key: '悠遊卡',
-    //         },
-    //         {
-    //             label:
-    //                 <Link to="/categories/其他聯名">
-    //                     其他聯名
-    //                 </Link>,
-    //             key: '其他聯名',
-    //         },
-    //     ]
-    // },
 ];
 
-const CategoryMenu = ({ categoryName }) => {
-    // const initSelected = items.filter(
-    //     categoryName == "所有商品" || categoryName == "熱門精選" || categoryName == "新品上市"
-    //         ? x => x?.key == categoryName
-    //         : x => x.children?.key == categoryName
-    // );
-    const [current, setCurrent] = useState('');
-    const onClick = (e) => {
-        console.log('click ', e);
-        setCurrent(e.key);
-    };
+const CategoryMenu = () => {
+    const {
+        token: { colorBgBase },
+    } = theme.useToken();
 
     return (
         <Menu
-            onClick={onClick}
             defaultOpenKeys={['依功能分類']}
             selectable={false}
-            // defaultSelectedKeys={[_initSelected.key]}
-            // selectedKeys={[current]}
             mode="inline"
             items={items}
             className={styles.menu}
+            style={{ backgroundColor: colorBgBase }}
         />
     );
 };

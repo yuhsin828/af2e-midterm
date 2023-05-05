@@ -21,6 +21,11 @@ export default function Header() {
         <div className={styles.bg} style={{ backgroundColor: colorBgHeader }}>
             <div className="container">
                 <div className={styles.header}>
+                    <MenuOutlined
+                        onClick={() => setIsOnTouch(!isOnTouch)}
+                        isOnTouch={isOnTouch}
+                        className={styles.hamburgerIcon}
+                    />
                     <div className={styles.navBar}>
                         <NavLink to="/">
                             {
@@ -35,11 +40,6 @@ export default function Header() {
                         <NavBar open={isOnTouch} onClose={() => setIsOnTouch(false)} />
                     </div>
                     <CartSummary />
-                    <MenuOutlined
-                        onClick={() => setIsOnTouch(!isOnTouch)}
-                        isOnTouch={isOnTouch}
-                        className={styles.hamburgerIcon}
-                    />
                 </div>
             </div>
         </div>

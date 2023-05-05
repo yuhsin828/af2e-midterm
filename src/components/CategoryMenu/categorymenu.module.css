@@ -2,3 +2,25 @@
     font-family: SweiSansCJKtc-Regular;
     font-size: 0.9rem;
 }
+
+.navLink {
+    font-size: 1rem;
+    /* font-weight: 700; */
+    text-align: center;
+    margin-right: 0;
+    opacity: 0.8;
+    transition: all 0.5s ease-in-out;
+}
+
+.navLink:hover {
+    opacity: 1;
+}
+
+.navLinkActive {
+    composes: navLink;
+    opacity: 1;
+}
+
+.icon {
+    margin-right: 1rem;
+}

@@ -1,117 +1,128 @@
 import NavLink from '../NavLink';
-import { Drawer, Divider } from 'antd';
-import { SearchOutlined, CustomerServiceOutlined, UserOutlined, GiftOutlined, FireOutlined, AppstoreOutlined, SoundOutlined } from '@ant-design/icons';
+import { Menu } from 'antd';
+import { Drawer } from 'antd';
+import { SearchOutlined, CustomerServiceOutlined, UserOutlined, GiftOutlined, FireOutlined, AppstoreOutlined, SoundOutlined, ApartmentOutlined } from '@ant-design/icons';
 import SetColorMode from "../SetColorMode";
 import styles from './navbar.module.css';
 
 export default function NavBar({ open, onClose }) {
-    // const items = [
-    //     {
-    //         label:
-    //             <NavLink to="/categories/所有商品" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-    //                 所有商品
-    //             </NavLink>,
-    //         key: '所有商品',
-    //     },
-    //     {
-    //         label:
-    //             <NavLink to="/categories/熱門精選" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-    //                 熱門精選
-    //             </NavLink>,
-    //         key: '熱門精選',
-    //     },
-    //     {
-    //         label:
-    //             <NavLink to="/categories/新品上市" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-    //                 新品上市
-    //             </NavLink>,
-    //         key: '新品上市',
-    //     },
-    //     {
-    //         label: '依功能分類',
-    //         key: '依功能分類',
-    //         children: [
-    //             {
-    //                 label:
-    //                     <NavLink to="/categories/北捷模型" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-    //                         北捷模型
-    //                     </NavLink>,
-    //                 key: '北捷模型',
-    //             },
-    //             {
-    //                 label:
-    //                     <NavLink to="/categories/北捷文創" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-    //                         北捷文創
-    //                     </NavLink>,
-    //                 key: '北捷文創',
-    //             },
-    //             {
-    //                 label:
-    //                     <NavLink to="/categories/玩具小物" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-    //                         玩具小物
-    //                     </NavLink>,
-    //                 key: '玩具小物',
-    //             },
-    //             {
-    //                 label:
-    //                     <NavLink to="/categories/生活文具" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-    //                         生活文具
-    //                     </NavLink>,
-    //                 key: '生活文具',
-    //             },
-    //             {
-    //                 label:
-    //                     <NavLink to="/categories/嚴選咖啡" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-    //                         嚴選咖啡
-    //                     </NavLink>,
-    //                 key: '嚴選咖啡',
-    //             },
-    //         ]
-    //     },
-    //     {
-    //         label:
-    //             <NavLink to="/activities" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-    //                 優惠活動
-    //             </NavLink>,
-    //         key: '熱門精選',
-    //     },
-    // ];
+    const items = [
+        {
+            label:
+                <NavLink to="/categories/all" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                    <AppstoreOutlined className={styles.icon} />所有商品
+                </NavLink>,
+            key: '所有商品',
+        },
+        {
+            label:
+                <NavLink to="/categories/hot" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                    <FireOutlined className={styles.icon} />熱門精選
+                </NavLink>,
+            key: '熱門精選',
+        },
+        {
+            label:
+                <NavLink to="/categories/new" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                    <SoundOutlined className={styles.icon} />新品上市
+                </NavLink>,
+            key: '新品上市',
+        },
+        {
+            label:
+                <NavLink to="#" className={styles.navLink}>
+                    <ApartmentOutlined className={styles.icon} />依功能分類
+                </NavLink>,
+            key: '依功能分類',
+            children: [
+                {
+                    label:
+                        <NavLink to="/categories/model" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                            北捷模型
+                        </NavLink>,
+                    key: '北捷模型',
+                },
+                {
+                    label:
+                        <NavLink to="/categories/creative" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                            北捷文創
+                        </NavLink>,
+                    key: '北捷文創',
+                },
+                {
+                    label:
+                        <NavLink to="/categories/plaything" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                            玩具小物
+                        </NavLink>,
+                    key: '玩具小物',
+                },
+                {
+                    label:
+                        <NavLink to="/categories/life" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                            生活文具
+                        </NavLink>,
+                    key: '生活文具',
+                },
+                {
+                    label:
+                        <NavLink to="/categories/coffee" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                            嚴選咖啡
+                        </NavLink>,
+                    key: '嚴選咖啡',
+                },
+            ]
+        },
+        {
+            label:
+                <NavLink to="/activities" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                    <GiftOutlined className={styles.icon} />優惠活動
+                </NavLink>,
+            key: '優惠活動',
+        },
+        {
+            label:
+                <NavLink to="/member" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                    <UserOutlined className={styles.icon} />會員專區
+                </NavLink>,
+            key: '會員專區',
+        },
+    ];
 
-    const SubMenu = () => (
-        <>
-            <NavLink to="/categories/all" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-                <AppstoreOutlined className={styles.icon} />所有商品
-            </NavLink>
-            <Divider />
-            <NavLink to="/categories/hot" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-                <FireOutlined className={styles.icon} />熱門精選
-            </NavLink>
-            <Divider />
-            <NavLink to="/categories/new" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-                <SoundOutlined className={styles.icon} />新品上市
-            </NavLink>
-            <Divider />
-            <NavLink to="/categories/model" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-                北捷模型
-            </NavLink>
-            <Divider />
-            <NavLink to="/categories/creative" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-                北捷文創
-            </NavLink>
-            <Divider />
-            <NavLink to="/categories/plaything" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-                玩具小物
-            </NavLink>
-            <Divider />
-            <NavLink to="/categories/life" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-                生活文具
-            </NavLink>
-            <Divider />
-            <NavLink to="/categories/coffee" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-                嚴選咖啡
-            </NavLink>
-        </>
-    )
+    // const SubMenu = () => (
+    //     <>
+    //         <NavLink to="/categories/all" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+    //             <AppstoreOutlined className={styles.icon} />所有商品
+    //         </NavLink>
+    //         <Divider />
+    //         <NavLink to="/categories/hot" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+    //             <FireOutlined className={styles.icon} />熱門精選
+    //         </NavLink>
+    //         <Divider />
+    //         <NavLink to="/categories/new" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+    //             <SoundOutlined className={styles.icon} />新品上市
+    //         </NavLink>
+    //         <Divider />
+    //         <NavLink to="/categories/model" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+    //             北捷模型
+    //         </NavLink>
+    //         <Divider />
+    //         <NavLink to="/categories/creative" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+    //             北捷文創
+    //         </NavLink>
+    //         <Divider />
+    //         <NavLink to="/categories/plaything" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+    //             玩具小物
+    //         </NavLink>
+    //         <Divider />
+    //         <NavLink to="/categories/life" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+    //             生活文具
+    //         </NavLink>
+    //         <Divider />
+    //         <NavLink to="/categories/coffee" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+    //             嚴選咖啡
+    //         </NavLink>
+    //     </>
+    // )
 
     const NavBarIcon = () => (
         <>
@@ -155,19 +166,13 @@ export default function NavBar({ open, onClose }) {
                 className={styles.drawer}
             >
                 <div className={styles.drawerMenu}>
-                    <SubMenu />
-                    <Divider className={styles.largeDNone} />
-
-                    <NavLink to="/activities" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-                        <GiftOutlined className={styles.icon} />
-                        優惠活動
-                    </NavLink>
-                    <Divider className={styles.largeDNone} />
-
-                    <NavLink to="/member" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-                        <UserOutlined className={styles.icon} />
-                        會員專區
-                    </NavLink>
+                    <Menu
+                        defaultOpenKeys={['依功能分類']}
+                        selectable={false}
+                        mode="inline"
+                        items={items}
+                        className={styles.menu}
+                    />
                 </div>
             </Drawer>
         </>
