@@ -3,8 +3,9 @@ import { theme, Carousel, Grid } from 'antd';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProductList from "../components/ProductList";
-import products from "../json/products.json";
+// import products from "../json/products.json";
 import { Link } from "react-router-dom";
+import { useProducts } from '../react-query';
 
 const { useBreakpoint } = Grid;
 
@@ -13,6 +14,9 @@ function Home() {
     token: { colorBgBase, colorTextBase, colorBgBlue, colorBgBlueText, colorBgLightBlue },
   } = theme.useToken();
   const title = "北捷線上商城";
+
+  const { data, isLoading } = useProducts();
+  const products = data || [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }];
 
   const { sm, md, xl } = useBreakpoint();
 
@@ -122,7 +126,7 @@ function Home() {
 
       <div className="container" style={styles.content}>
         <div style={styles.contentTitle}>熱門精選</div>
-        <ProductList products={_hotProducts} />
+        <ProductList products={_hotProducts} isLoading={isLoading} />
         <div style={styles.btnCtr}>
           <Link to="/categories/hot" style={styles.moreBtn}>
             查看更多
@@ -133,7 +137,7 @@ function Home() {
           <div style={styles.contentTitle2}>新品上市</div>
           <div style={styles.titleDivider}></div>
         </div>
-        <ProductList products={_newProducts} />
+        <ProductList products={_newProducts} isLoading={isLoading} />
         <div style={styles.btnCtr}>
           <Link to="/categories/new" style={styles.moreBtn}>
             查看更多
