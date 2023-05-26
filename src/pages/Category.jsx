@@ -5,9 +5,9 @@ import { theme, Row, Col } from 'antd';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProductList from "../components/ProductList";
-import products from "../json/products.json";
 import categories from "../json/categories.json";
 import CategoryMenu from "../components/CategoryMenu";
+import { useProducts } from '../react-query';
 
 function Category() {
   const {
@@ -15,13 +15,16 @@ function Category() {
   } = theme.useToken();
 
   const { categoryName } = useParams();
+  const { data, isLoading } = useProducts();
+
+  const products = data || [];
 
   const _products = products.filter(
     categoryName == "hot" || categoryName == "new"
-      ? x => x?.hotNew === categoryName
+      ? x => x?.hotNew == categoryName
       : categoryName == "all"
         ? x => x
-        : x => x?.category === categoryName
+        : x => x?.category == categoryName.toUpperCase()
   );
 
   const categoryNameCH = categories.find(
@@ -52,7 +55,7 @@ function Category() {
             xxl={{ span: 4 }}
             style={{ paddingRight: '0.5rem', margin: '1rem 0' }}
           >
-            <CategoryMenu categoryName={categoryName} />
+            <CategoryMenu />
           </Col>
           <Col
             span={24}
@@ -62,7 +65,7 @@ function Category() {
             style={{ padding: 0 }}
           >
             <div style={{ fontSize: '1.4rem', fontWeight: '600', textAlign: 'center', margin: '1rem 0', fontFamily: 'SweiSansCJKtc-Regular' }}>{categoryNameCH.ch}</div>
-            <ProductList products={_products} />
+            <ProductList products={_products} isLoading={isLoading} />
           </Col>
         </Row>
       </div>

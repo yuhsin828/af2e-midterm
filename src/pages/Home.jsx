@@ -3,7 +3,6 @@ import { theme, Carousel, Grid } from 'antd';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProductList from "../components/ProductList";
-// import products from "../json/products.json";
 import { Link } from "react-router-dom";
 import { useProducts } from '../react-query';
 

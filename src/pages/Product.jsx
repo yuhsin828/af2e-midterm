@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 // import ProductList from "../components/ProductList";
 import ProductDetail from "../components/ProductDetail";
-import products from "../json/products.json";
+import { useProductById } from '../react-query';
 
 function Product() {
    const {
@@ -13,18 +13,19 @@ function Product() {
    } = theme.useToken();
 
    const { productId } = useParams();
-   const product = products.find(
-      x => x.id === productId
-   );
+   const { data, isLoading } = useProductById(productId);
+   const product = data || {};
 
    // const _relativeProduct = products.filter(
    //    x => x?.category === product.category
    // );
 
+   const title = product.name + `｜北捷線上商城`;
+
    return (
       <div className="mainLayout">
          <Helmet>
-            <title>{product.name}｜北捷線上商城</title>
+            <title>{title}｜北捷線上商城</title>
             <style>{`
                body { 
                   background-color: ${colorBgBase}; 
@@ -36,7 +37,7 @@ function Product() {
 
          <div className="layoutContent">
             <div className="container">
-               <ProductDetail product={product} />
+               <ProductDetail product={product} isLoading={isLoading} />
             </div>
             {/* <div style={{ backgroundColor: '#E9F8FF' }}>
                <div className="container">
