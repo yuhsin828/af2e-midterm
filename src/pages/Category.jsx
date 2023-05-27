@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import ProductList from "../components/ProductList";
 import categories from "../json/categories.json";
 import CategoryMenu from "../components/CategoryMenu";
-import { useProducts } from '../react-query';
+import { useProductsByCategory } from '../react-query';
 
 function Category() {
   const {
@@ -15,22 +15,12 @@ function Category() {
   } = theme.useToken();
 
   const { categoryName } = useParams();
-  const { data, isLoading } = useProducts();
-
-  const products = data || [];
-
-  const _products = products.filter(
-    categoryName == "hot" || categoryName == "new"
-      ? x => x?.hotNew == categoryName
-      : categoryName == "all"
-        ? x => x
-        : x => x?.category == categoryName.toUpperCase()
-  );
+  const { data, isLoading } = useProductsByCategory(categoryName);
+  const products = data || [{ id: 1 }, { id: 2 }];
 
   const categoryNameCH = categories.find(
     x => x.en == categoryName
   );
-
   const title = _.startCase(categoryNameCH.ch) + `｜北捷線上商城`;
 
   return (
@@ -65,7 +55,7 @@ function Category() {
             style={{ padding: 0 }}
           >
             <div style={{ fontSize: '1.4rem', fontWeight: '600', textAlign: 'center', margin: '1rem 0', fontFamily: 'SweiSansCJKtc-Regular' }}>{categoryNameCH.ch}</div>
-            <ProductList products={_products} isLoading={isLoading} />
+            <ProductList products={products} isLoading={isLoading} />
           </Col>
         </Row>
       </div>

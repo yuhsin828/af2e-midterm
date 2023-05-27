@@ -1,7 +1,7 @@
-import { Row, Col } from "antd";
+import { Row, Col, Skeleton } from "antd";
 import ProductItem from "../ProductItem";
 
-export default function ProductList({ products }) {
+export default function ProductList({ products, isLoading }) {
   return (
     !products[0]
       ?
@@ -18,7 +18,19 @@ export default function ProductList({ products }) {
             xl={{ span: 6 }}
             style={{ padding: '0 0.5rem' }}
           >
-            <ProductItem product={product} />
+            {isLoading
+              ? (
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <Skeleton.Image active style={{ margin: '1rem 0' }} />
+                  <Skeleton active title={false} paragraph={{ rows: 2 }} />
+                </div>
+              ) : (<ProductItem product={product} />
+              )
+            }
+
+            {/* <Skeleton loading={isLoading} active paragraph={{ rows: 1, }}>
+              <ProductItem product={product} />
+            </Skeleton> */}
           </Col>
         ))}
       </Row>

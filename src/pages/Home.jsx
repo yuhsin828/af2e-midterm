@@ -15,7 +15,7 @@ function Home() {
   const title = "北捷線上商城";
 
   const { data, isLoading } = useProducts();
-  const products = data || [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }];
+  const products = data || [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
   const { sm, md, xl } = useBreakpoint();
 
@@ -146,13 +146,13 @@ function Home() {
 
       <div style={styles.bgLightBlue}>
         <div style={styles.models}>
-          <Link to="/products/MFrvgXh8" style={styles.modelCtr}>
+          <Link to="/products/54Cpzq8PlRGDaBxvg4bF" style={styles.modelCtr}>
             <img style={styles.modelImg} src="/images/modelImg_1.png" alt="modelImg" />
           </Link>
-          <Link to="/products/KdBsuFM9" style={styles.modelCtr}>
+          <Link to="/products/MNloHu3cfR6Z8ScHWfLQ" style={styles.modelCtr}>
             <img style={styles.modelImg} src="/images/modelImg_2.png" alt="modelImg" />
           </Link>
-          <Link to="/products/LDC75wNM" style={styles.modelCtr}>
+          <Link to="/products/sgotdr7ESsu7XAnRM0nN" style={styles.modelCtr}>
             <img style={styles.modelImg} src="/images/modelImg_3.png" alt="modelImg" />
           </Link>
           <Link to="/categories/model" style={styles.modelCtr}>

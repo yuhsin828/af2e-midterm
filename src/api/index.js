@@ -60,7 +60,11 @@ export const getProductsByCategory = async ({ queryKey }) => {
     const [category] = queryKey;
     const q = await query(
         productsCollection,
-        where("category", "==", category.toUpperCase())
+        category == "hot" || category == "new"
+            ? where("hotNew", "==", category)
+            : category == "all"
+                ? where("countInStock", ">=", 1)
+                : where("category", "==", category.toUpperCase())
     );
     let querySnapshot = await getDocs(q);
     // Convert the query to a json array.
