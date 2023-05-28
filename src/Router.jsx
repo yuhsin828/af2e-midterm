@@ -6,7 +6,9 @@ import Home from './pages/Home'
 import Category from './pages/Category';
 import Product from './pages/Product';
 import Activity from './pages/Activity';
-import Member from './pages/Member';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Profile from './pages/Profile';
 import { darkTheme, lightTheme } from './theme';
 import { selectLightMode } from "./redux/colorSlice";
 
@@ -28,8 +30,10 @@ function Router() {
             <Route path="activities" element={<Activity />}>
               <Route path=":activityName" />
             </Route>
-            <Route path="member" element={<Member />}>
-              <Route path=":memberOption" />
+            <Route path="auth">
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Register />} />
+              <Route path="profile" element={<Profile />} />
             </Route>
           </Routes>
         </BrowserRouter>

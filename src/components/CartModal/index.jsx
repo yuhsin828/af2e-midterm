@@ -5,6 +5,7 @@ import { addCartItems, removeCartItems } from "../../redux/cartSlice";
 import { ShoppingCartOutlined, CloseOutlined } from '@ant-design/icons';
 import styles from "./cartmodal.module.css";
 import { selectCartItems } from "../../redux/cartSlice";
+import { useUserInfo } from "../../react-query";
 
 const { Option } = Select;
 
@@ -21,6 +22,8 @@ export default function CartModal({ isOpen, toggleModal }) {
          cartItems.reduce((sum, item) => sum + item.price * item.qty, 0)
          : 0;
    }
+
+   const { data: userInfo } = useUserInfo();
 
    return (
       <Modal
@@ -80,7 +83,7 @@ export default function CartModal({ isOpen, toggleModal }) {
          </div>
 
          <div className={styles.btnCtr}>
-            <Link className={styles.btn} style={{ backgroundColor: colorBgBlue, color: colorBgBlueText }}>
+            <Link to={(userInfo?.name) ? ("/auth/profile") : ("/auth/login?redirect=/auth/profile")} className={styles.btn} style={{ backgroundColor: colorBgBlue, color: colorBgBlueText }}>
                <ShoppingCartOutlined />
                <span style={{ paddingLeft: '0.5rem' }}>結帳</span>
             </Link>

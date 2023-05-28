@@ -4,8 +4,14 @@ import { Drawer } from 'antd';
 import { SearchOutlined, CustomerServiceOutlined, UserOutlined, GiftOutlined, FireOutlined, AppstoreOutlined, SoundOutlined, ApartmentOutlined } from '@ant-design/icons';
 import SetColorMode from "../SetColorMode";
 import styles from './navbar.module.css';
+// import { useSelector } from "react-redux";
+// import { selectUserInfo } from "../../redux/usersSlice";
+import { useUserInfo } from "../../react-query";
 
 export default function NavBar({ open, onClose }) {
+    // const userInfo = useSelector(selectUserInfo);
+    const { data: userInfo} = useUserInfo();
+
     const items = [
         {
             label:
@@ -81,8 +87,12 @@ export default function NavBar({ open, onClose }) {
         },
         {
             label:
-                <NavLink to="/member" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-                    <UserOutlined className={styles.icon} />會員專區
+                <NavLink to={(userInfo?.name) ? ("/auth/profile") : ("/auth/login?redirect=/auth/profile")} className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                    <UserOutlined className={styles.icon} />
+                    {!!userInfo?.name
+                        ? `會員專區`
+                        : `登入`
+                    }
                 </NavLink>,
             key: '會員專區',
         },
@@ -149,8 +159,11 @@ export default function NavBar({ open, onClose }) {
                 <NavLink to="/activities" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
                     優惠活動
                 </NavLink>
-                <NavLink to="/member" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-                    會員專區
+                <NavLink to={(userInfo?.name) ? ("/auth/profile") : ("/auth/login?redirect=/auth/profile")} className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                    {!!userInfo?.name
+                        ? `會員專區`
+                        : `登入`
+                    }
                 </NavLink>
             </div>
             <div className={styles.navSection}>
