@@ -7,6 +7,7 @@ import styles from "./header.module.css";
 import { theme } from "antd";
 import { useSelector } from "react-redux";
 import { selectLightMode } from "../../redux/colorSlice";
+import Favorite from "../Favorite";
 
 export default function Header() {
     const [isOnTouch, setIsOnTouch] = useState(false);
@@ -39,6 +40,7 @@ export default function Header() {
 
                         <NavBar open={isOnTouch} onClose={() => setIsOnTouch(false)} />
                     </div>
+                    <Favorite />
                     <CartSummary />
                 </div>
             </div>

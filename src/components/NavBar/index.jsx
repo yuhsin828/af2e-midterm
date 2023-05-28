@@ -7,7 +7,7 @@ import styles from './navbar.module.css';
 import { useUserInfo } from "../../react-query";
 
 export default function NavBar({ open, onClose }) {
-    const { data: userInfo} = useUserInfo();
+    const { data: userInfo } = useUserInfo();
 
     const items = [
         {
@@ -133,13 +133,13 @@ export default function NavBar({ open, onClose }) {
 
     const NavBarIcon = () => (
         <>
-            <NavLink to="#" className={styles.navIcon}>
+            {/* <NavLink to="#" className={styles.navIcon}>
                 <SearchOutlined className={styles.icon} />
-            </NavLink>
+            </NavLink> */}
 
-            <NavLink to="#" className={styles.navIcon}>
+            {/* <NavLink to="#" className={styles.navIcon}>
                 <CustomerServiceOutlined className={styles.icon} />
-            </NavLink>
+            </NavLink> */}
 
             <NavLink to="#" className={styles.navIcon}>
                 <SetColorMode />

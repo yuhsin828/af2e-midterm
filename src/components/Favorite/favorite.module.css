@@ -1,0 +1,9 @@
+.favorite {
+   cursor: pointer;
+   margin-right: 1rem;
+}
+
+.icon {
+   font-size: 1.4rem;
+   padding-top: 0.2rem;
+}
