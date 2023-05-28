@@ -6,6 +6,7 @@ import { ShoppingCartOutlined, CloseOutlined } from '@ant-design/icons';
 import styles from "./cartmodal.module.css";
 import { selectCartItems } from "../../redux/cartSlice";
 import { useUserInfo } from "../../react-query";
+import { motion } from "framer-motion";
 
 const { Option } = Select;
 
@@ -82,12 +83,17 @@ export default function CartModal({ isOpen, toggleModal }) {
             <div className={styles.totalPrice}>${getTotalPrice()}</div>
          </div>
 
-         <div className={styles.btnCtr}>
-            <Link to={(userInfo?.name) ? ("/auth/profile") : ("/auth/login?redirect=/auth/profile")} className={styles.btn} style={{ backgroundColor: colorBgBlue, color: colorBgBlueText }}>
-               <ShoppingCartOutlined />
-               <span style={{ paddingLeft: '0.5rem' }}>結帳</span>
-            </Link>
-         </div>
+         <motion.div
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", damping: 10 }}
+         >
+            <div className={styles.btnCtr}>
+               <Link to={(userInfo?.name) ? ("/auth/profile") : ("/auth/login?redirect=/auth/profile")} className={styles.btn} style={{ backgroundColor: colorBgBlue, color: colorBgBlueText }}>
+                  <ShoppingCartOutlined />
+                  <span style={{ paddingLeft: '0.5rem' }}>結帳</span>
+               </Link>
+            </div>
+         </motion.div>
       </Modal>
    );
 }

@@ -4,12 +4,9 @@ import { Drawer } from 'antd';
 import { SearchOutlined, CustomerServiceOutlined, UserOutlined, GiftOutlined, FireOutlined, AppstoreOutlined, SoundOutlined, ApartmentOutlined } from '@ant-design/icons';
 import SetColorMode from "../SetColorMode";
 import styles from './navbar.module.css';
-// import { useSelector } from "react-redux";
-// import { selectUserInfo } from "../../redux/usersSlice";
 import { useUserInfo } from "../../react-query";
 
 export default function NavBar({ open, onClose }) {
-    // const userInfo = useSelector(selectUserInfo);
     const { data: userInfo} = useUserInfo();
 
     const items = [
@@ -69,13 +66,13 @@ export default function NavBar({ open, onClose }) {
                         </NavLink>,
                     key: '生活文具',
                 },
-                {
-                    label:
-                        <NavLink to="/categories/coffee" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-                            嚴選咖啡
-                        </NavLink>,
-                    key: '嚴選咖啡',
-                },
+                // {
+                //     label:
+                //         <NavLink to="/categories/coffee" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+                //             嚴選咖啡
+                //         </NavLink>,
+                //     key: '嚴選咖啡',
+                // },
             ]
         },
         {

@@ -60,13 +60,13 @@ const items = [
                     </NavLink>,
                 key: '生活文具',
             },
-            {
-                label:
-                    <NavLink to="/categories/coffee" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
-                        嚴選咖啡
-                    </NavLink>,
-                key: '嚴選咖啡',
-            },
+            // {
+            //     label:
+            //         <NavLink to="/categories/coffee" className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}>
+            //             嚴選咖啡
+            //         </NavLink>,
+            //     key: '嚴選咖啡',
+            // },
         ]
     },
 ];

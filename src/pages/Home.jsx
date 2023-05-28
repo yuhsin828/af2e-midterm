@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import ProductList from "../components/ProductList";
 import { Link } from "react-router-dom";
 import { useProducts } from '../react-query';
+import { motion } from "framer-motion";
 
 const { useBreakpoint } = Grid;
 
@@ -70,7 +71,7 @@ function Home() {
     },
     moreBtn: {
       flex: md ? 'none' : 1,
-      padding: md ? '0.5rem 3rem' : '0.6rem 0',
+      padding: md ? '0.5rem 3rem' : '0.6rem 3rem',
       textDecoration: 'none',
       fontSize: '0.9rem',
       textAlign: 'center',
@@ -127,9 +128,14 @@ function Home() {
         <div style={styles.contentTitle}>熱門精選</div>
         <ProductList products={_hotProducts} isLoading={isLoading} />
         <div style={styles.btnCtr}>
-          <Link to="/categories/hot" style={styles.moreBtn}>
-            查看更多
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            <Link to="/categories/hot" style={styles.moreBtn}>
+              查看更多
+            </Link>
+          </motion.div>
         </div>
 
         <div style={styles.contentTitleDivider}>
@@ -138,9 +144,14 @@ function Home() {
         </div>
         <ProductList products={_newProducts} isLoading={isLoading} />
         <div style={styles.btnCtr}>
-          <Link to="/categories/new" style={styles.moreBtn}>
-            查看更多
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            <Link to="/categories/new" style={styles.moreBtn}>
+              查看更多
+            </Link>
+          </motion.div>
         </div>
       </div>
 
