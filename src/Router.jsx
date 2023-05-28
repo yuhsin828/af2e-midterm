@@ -11,6 +11,15 @@ import Register from './pages/Register';
 import Profile from './pages/Profile';
 import { darkTheme, lightTheme } from './theme';
 import { selectLightMode } from "./redux/colorSlice";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+}
 
 function Router() {
   const lightMode = useSelector(selectLightMode);
@@ -19,6 +28,7 @@ function Router() {
     <ConfigProvider theme={theme} >
       <HelmetProvider context={{}}>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="categories">
