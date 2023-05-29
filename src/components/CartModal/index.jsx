@@ -83,17 +83,22 @@ export default function CartModal({ isOpen, toggleModal }) {
             <div className={styles.totalPrice}>${getTotalPrice()}</div>
          </div>
 
-         <motion.div
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", damping: 10 }}
-         >
-            <div className={styles.btnCtr}>
-               <Link to={(userInfo?.name) ? ("/auth/profile") : ("/auth/login?redirect=/auth/profile")} className={styles.btn} style={{ backgroundColor: colorBgBlue, color: colorBgBlueText }}>
-                  <ShoppingCartOutlined />
-                  <span style={{ paddingLeft: '0.5rem' }}>結帳</span>
-               </Link>
-            </div>
-         </motion.div>
+         {cartItems.length === 0 ? (
+            <div></div>
+         ) : (
+            <motion.div
+               whileHover={{ scale: 1.02 }}
+               transition={{ type: "spring", damping: 10 }}
+            >
+               <div className={styles.btnCtr}>
+                  <Link to={(userInfo?.name) ? ("/auth/checkout") : ("/auth/login?redirect=/auth/checkout")} className={styles.btn} style={{ backgroundColor: colorBgBlue, color: colorBgBlueText }}>
+                     <ShoppingCartOutlined />
+                     <span style={{ paddingLeft: '0.5rem' }}>結帳</span>
+                  </Link>
+               </div>
+            </motion.div>
+         )}
+
       </Modal>
    );
 }

@@ -9,6 +9,7 @@ import Activity from './pages/Activity';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
+import Checkout from './pages/Checkout';
 import { darkTheme, lightTheme } from './theme';
 import { selectLightMode } from "./redux/colorSlice";
 import { useEffect } from 'react';
@@ -44,6 +45,7 @@ function Router() {
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
               <Route path="profile" element={<Profile />} />
+              <Route path="checkout" element={<Checkout />} />
             </Route>
           </Routes>
         </BrowserRouter>

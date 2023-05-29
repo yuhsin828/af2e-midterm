@@ -4,6 +4,10 @@ import { useSearchParams } from 'react-router-dom';
 import AddToCart from "../AddToCart";
 import styles from "./productdetail.module.css";
 import { motion } from "framer-motion";
+import _ from 'lodash';
+import { useToggleFavoriteProduct, useUserInfo } from '../../react-query';
+import { HeartFilled } from "@ant-design/icons";
+
 const { Option } = Select;
 
 function ProductDetail({ product, isLoading }) {
@@ -19,6 +23,15 @@ function ProductDetail({ product, isLoading }) {
    useEffect(() => {
       setQty(initQty)
    }, [initQty])
+
+   const { mutate } = useToggleFavoriteProduct();
+   const { data: userInfo } = useUserInfo() || {};
+   const favorites = userInfo.favorites || [];
+   let isFavorite = _.includes(favorites, product.id);
+   const toggleFavorite = () => {
+      if (!!userInfo?.uid)
+         mutate({ productId: product.id, uid: userInfo?.uid })
+   }
 
    return (
       <Row gutter={[0, 32]}
@@ -75,8 +88,13 @@ function ProductDetail({ product, isLoading }) {
                      <div className={styles.name} >
                         {product.name}
                      </div>
-                     <div style={{ color: colorTextBlue }} className={styles.price} >
-                        NT${product.price}
+                     <div className={styles.priceFavorite}>
+                        <div style={{ color: colorTextBlue }} className={styles.price} >
+                           NT${product.price}
+                        </div>
+                        <div onClick={toggleFavorite} className={styles.favorite}>
+                           <HeartFilled style={{ color: colorTextBlue, opacity: isFavorite ? 1 : '0.2' }} />
+                        </div>
                      </div>
                      <div className={styles.description}>
                         {product.description}
