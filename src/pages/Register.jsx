@@ -25,6 +25,7 @@ function Register() {
             </Helmet>
             <Header className="layoutHeader" />
             <div className="layoutContent container">
+                <div style={{ fontSize: '1.4rem', fontWeight: '600', textAlign: 'center', margin: '1rem 0' }}>註冊會員</div>
                 <RegisterCard redirect={redirect} />
             </div>
             <Footer className="layoutFooter" />

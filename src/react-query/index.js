@@ -1,8 +1,8 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { getProductById, getProducts, getProductsByCategory, login, register, getUserInfo, updateUserInfo, logout, toggleFavoriteProduct, getProductsByFavorites } from "../api";
 
-export const useProducts = () => {
-  const { data, isLoading } = useQuery([], getProducts);
+export const useProducts = (showItemCount) => {
+  const { data, isLoading } = useQuery([showItemCount], getProducts);
   return { data, isLoading };
 };
 

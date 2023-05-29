@@ -25,6 +25,7 @@ function Login() {
             </Helmet>
             <Header className="layoutHeader" />
             <div className="layoutContent container">
+                <div style={{ fontSize: '1.4rem', fontWeight: '600', textAlign: 'center', margin: '1rem 0' }}>登入會員</div>
                 <LoginCard redirect={redirect} />
             </div>
             <Footer className="layoutFooter" />

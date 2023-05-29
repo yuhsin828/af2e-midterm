@@ -10,6 +10,7 @@ import {
     deleteDoc,
     query,
     where,
+    limit,
     initializeFirestore,
 } from "firebase/firestore";
 import {
@@ -56,14 +57,40 @@ export const feedProducts = async () => {
     });
 };
 
-export const getProducts = async () => {
-    const querySnapshot = await getDocs(productsCollection);
-    // Convert query to a json array.
+// export const getProducts = async () => {
+//     const querySnapshot = await getDocs(productsCollection);
+//     // Convert query to a json array.
+//     let result = [];
+//     querySnapshot.forEach(async (product) => {
+//         await result.push(product.data());
+//     });
+//     console.log({ result });
+//     return result;
+// };
+
+export const getProducts = async ({ queryKey }) => {
+    const [showItemCount] = queryKey;
+    const q = await query(
+        productsCollection,
+        where("hotNew", "==", "hot"),
+        limit(showItemCount)
+    );
+    let querySnapshot = await getDocs(q);
+
+    const r = await query(
+        productsCollection,
+        where("hotNew", "==", "new"),
+        limit(showItemCount)
+    );
+    let rquerySnapshot = await getDocs(r);
+
     let result = [];
     querySnapshot.forEach(async (product) => {
         await result.push(product.data());
     });
-    console.log({ result });
+    rquerySnapshot.forEach(async (product) => {
+        await result.push(product.data());
+    });
     return result;
 };
 
@@ -171,15 +198,16 @@ export const getProductsByFavorites = async ({ queryKey }) => {
     const userDoc = docSnap.data();
     const favorites = userDoc?.favorites || [];
     let result = [];
-    for (let i = 0; i < favorites.length; i++) {
-        const q = await query(
-            productsCollection,
-            where("id", "==", favorites[i])
-        );
-        let querySnapshot = await getDocs(q);
-        querySnapshot.forEach(async (product) => {
-            await result.push(product.data());
-        });
-    }
+
+    await Promise.all(
+        favorites.map(async (favorite) => {
+            const q = query(productsCollection, where("id", "==", favorite));
+            const querySnapshot = await getDocs(q);
+            querySnapshot.forEach((product) => {
+                result.push(product.data());
+            });
+        })
+    );
+
     return result;
 }

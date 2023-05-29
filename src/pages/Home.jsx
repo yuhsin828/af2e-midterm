@@ -15,19 +15,11 @@ function Home() {
   } = theme.useToken();
   const title = "北捷線上商城";
 
-  const { data, isLoading } = useProducts();
-  const products = data || [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
-
   const { sm, md, xl } = useBreakpoint();
-
   const showItemCount = xl ? 4 : sm ? 3 : 4;
 
-  const _hotProducts = products.filter(
-    x => x?.hotNew === 'hot'
-  ).slice(0, showItemCount);
-  const _newProducts = products.filter(
-    x => x?.hotNew === 'new'
-  ).slice(0, showItemCount);
+  const { data, isLoading } = useProducts(showItemCount);
+  const products = data || [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 }];
 
   const styles = {
     banner: {
@@ -126,7 +118,7 @@ function Home() {
 
       <div className="container" style={styles.content}>
         <div style={styles.contentTitle}>熱門精選</div>
-        <ProductList products={_hotProducts} isLoading={isLoading} />
+        <ProductList products={products.slice(0, showItemCount)} isLoading={isLoading} />
         <div style={styles.btnCtr}>
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -142,7 +134,7 @@ function Home() {
           <div style={styles.contentTitle2}>新品上市</div>
           <div style={styles.titleDivider}></div>
         </div>
-        <ProductList products={_newProducts} isLoading={isLoading} />
+        <ProductList products={products.slice(showItemCount, showItemCount + showItemCount)} isLoading={isLoading} />
         <div style={styles.btnCtr}>
           <motion.div
             whileHover={{ scale: 1.05 }}

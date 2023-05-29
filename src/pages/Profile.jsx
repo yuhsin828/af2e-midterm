@@ -22,6 +22,7 @@ function Profile() {
             </Helmet>
             <Header className="layoutHeader" />
             <div className="layoutContent container">
+                <div style={{ fontSize: '1.4rem', fontWeight: '600', textAlign: 'center', margin: '1rem 0' }}>會員資料</div>
                 <ProfileCard />
             </div>
             <Footer className="layoutFooter" />
