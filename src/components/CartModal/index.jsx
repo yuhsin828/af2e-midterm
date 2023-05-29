@@ -91,7 +91,7 @@ export default function CartModal({ isOpen, toggleModal }) {
                transition={{ type: "spring", damping: 10 }}
             >
                <div className={styles.btnCtr}>
-                  <Link to={(userInfo?.name) ? ("/auth/checkout") : ("/auth/login?redirect=/auth/checkout")} className={styles.btn} style={{ backgroundColor: colorBgBlue, color: colorBgBlueText }}>
+                  <Link to={(userInfo?.name) ? ("/order/checkout") : ("/auth/login?redirect=/order/checkout")} className={styles.btn} style={{ backgroundColor: colorBgBlue, color: colorBgBlueText }}>
                      <ShoppingCartOutlined />
                      <span style={{ paddingLeft: '0.5rem' }}>結帳</span>
                   </Link>

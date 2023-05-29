@@ -45,6 +45,8 @@ function Router() {
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
               <Route path="profile" element={<Profile />} />
+            </Route>
+            <Route path="order">
               <Route path="checkout" element={<Checkout />} />
             </Route>
           </Routes>
