@@ -17,17 +17,12 @@ export default function FavoriteModal({ isOpen, toggleModal }) {
             onCancel={handleCancel}
             footer={null}
         >
-            {(!userInfo?.name)
+            {(!userInfo.favorites?.length == 0)
                 ? (
-                    <div>
-                        請先<Link to="/auth/login?redirect=/auth/profile">登入</Link>
-                    </div>
-                ) : (!userInfo?.favorites[0])
-                    ? (
-                        <div>您還沒有收藏商品，快去逛逛吧！</div>
-                    ) : (
-                        <ProductList products={products} isLoading={isLoading} />
-                    )}
+                    <ProductList products={products} isLoading={isLoading} />
+                ) : (
+                    <div>您還沒有收藏商品，快去逛逛吧！</div>
+                )}
         </Modal>
     );
 }

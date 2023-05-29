@@ -73,16 +73,16 @@ const LoginCard = ({ redirect }) => {
             />
          </Form.Item>
          <Form.Item>
-            <Form.Item name="remember" valuePropName="checked" noStyle>
-               <Checkbox onChange={() => setIsRemember(!isRemember)} checked={isRemember}>
-                  記住我
-               </Checkbox>
-            </Form.Item>
-            <span className={styles.loginForm__forget}>
-               <Link to={"/"}>
+            <div className={styles.loginForm__rememberForget}>
+               <Form.Item name="remember" valuePropName="checked" noStyle>
+                  <Checkbox onChange={() => setIsRemember(!isRemember)} checked={isRemember}>
+                     記住我
+                  </Checkbox>
+               </Form.Item>
+               <Link to={""}>
                   忘記密碼？
                </Link>
-            </span>
+            </div>
          </Form.Item>
 
          <Form.Item>

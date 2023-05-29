@@ -69,7 +69,7 @@ const RegisterCard = ({ redirect }) => {
         rules={[
           {
             required: true,
-            message: "請設定您的密碼",
+            message: "請設定至少6位數的密碼",
           },
         ]}
         hasFeedback
@@ -116,7 +116,7 @@ const RegisterCard = ({ redirect }) => {
         ]}
       >
         <Checkbox>
-          我同意<Link to={"/"}>會員條款</Link>及<Link to={"/"}>隱私政策</Link>
+          我同意<Link to={""}>會員條款</Link>及<Link to={""}>隱私政策</Link>
         </Checkbox>
       </Form.Item>
       <Form.Item>

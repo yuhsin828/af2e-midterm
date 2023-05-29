@@ -5,8 +5,9 @@
   max-width: 20rem;
 }
 
-.loginForm__forget {
-  margin-left: 10rem;
+.loginForm__rememberForget{
+  display: flex;
+  justify-content: space-between;
 }
 
 .loginForm__button {
