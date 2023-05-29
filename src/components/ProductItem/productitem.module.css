@@ -28,6 +28,11 @@
    font-size: 1rem;
 }
 
+.message {
+   font-family: SweiSansCJKtc-Regular;
+   font-size: 0.8rem;
+}
+
 @media (min-width: 576px) {
    .name {
       text-align: center;

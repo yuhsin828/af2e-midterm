@@ -7,7 +7,7 @@ function Activity() {
     const {
         token: { colorBgBase, colorTextBase },
     } = theme.useToken();
-    const title = "優惠活動";
+    const title = "優惠活動｜北捷線上商城";
 
     return (
         <div className="mainLayout">

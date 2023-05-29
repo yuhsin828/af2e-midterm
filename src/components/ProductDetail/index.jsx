@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Row, Col, Select, theme, Skeleton } from "antd";
+import { Row, Col, Select, theme, Skeleton, message } from "antd";
 import { useSearchParams } from 'react-router-dom';
 import AddToCart from "../AddToCart";
 import styles from "./productdetail.module.css";
@@ -33,10 +33,22 @@ function ProductDetail({ product, isLoading }) {
          mutate({ productId: product.id, uid: userInfo?.uid })
    }
 
+   const [messageApi, contextHolder] = message.useMessage();
+   const info = () => {
+      messageApi.info({
+         content: '請先登入',
+         className: styles.message,
+         style: {
+            marginTop: '20vh',
+         },
+      });
+   };
+
    return (
       <Row gutter={[0, 32]}
          className={styles.main}
       >
+         {contextHolder}
          <Col
             span={24}
             md={{ span: 12 }}
@@ -92,7 +104,7 @@ function ProductDetail({ product, isLoading }) {
                         <div style={{ color: colorTextBlue }} className={styles.price} >
                            NT${product.price}
                         </div>
-                        <div onClick={toggleFavorite} className={styles.favorite}>
+                        <div onClick={(!userInfo?.name) ? (info) : (toggleFavorite)} className={styles.favorite}>
                            <HeartFilled style={{ color: colorTextBlue, opacity: isFavorite ? 1 : '0.2' }} />
                         </div>
                      </div>

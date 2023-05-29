@@ -12,7 +12,7 @@ function Profile() {
     return (
         <div className="mainLayout">
             <Helmet>
-                <title>會員專區</title>
+                <title>會員專區｜北捷線上商城</title>
                 <style>{`
                body { 
                   background-color: ${colorBgBase}; 

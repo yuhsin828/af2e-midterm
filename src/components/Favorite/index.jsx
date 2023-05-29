@@ -1,4 +1,4 @@
-import { Badge, theme } from "antd";
+import { Badge, theme, message } from "antd";
 import { HeartOutlined } from "@ant-design/icons";
 import { useUserInfo } from "../../react-query";
 import styles from "./favorite.module.css";
@@ -17,9 +17,21 @@ export default function Favorite() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
 
+  const [messageApi, contextHolder] = message.useMessage();
+  const info = () => {
+    messageApi.info({
+      content: '請先登入',
+      className: styles.message,
+      style: {
+        marginTop: '20vh',
+      },
+    });
+  };
+
   return (
     <>
-      <div onClick={toggleOpen} className={styles.favorite}>
+      {contextHolder}
+      <div onClick={(!userInfo?.name) ? (info) : (toggleOpen)} className={styles.favorite}>
         <Badge count={count} style={{ backgroundColor: colorTextBlue }}>
           <HeartOutlined className={styles.icon} />
         </Badge>

@@ -2,7 +2,7 @@
 import Link from '../Link';
 import styles from './productitem.module.css';
 import { motion } from "framer-motion";
-import { theme } from "antd";
+import { theme, message } from "antd";
 import _ from 'lodash';
 import { useToggleFavoriteProduct, useUserInfo } from '../../react-query';
 import { HeartFilled } from "@ant-design/icons";
@@ -21,8 +21,20 @@ export default function ProductItem({ product }) {
          mutate({ productId: product.id, uid: userInfo?.uid })
    }
 
+   const [messageApi, contextHolder] = message.useMessage();
+   const info = () => {
+      messageApi.info({
+         content: '請先登入',
+         className: styles.message,
+         style: {
+            marginTop: '20vh',
+         },
+      });
+   };
+
    return (
       <div className={styles.item}>
+         {contextHolder}
          <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", damping: 10 }}
@@ -43,7 +55,7 @@ export default function ProductItem({ product }) {
                <div className={styles.price}>
                   NT${product.price}
                </div>
-               <div onClick={toggleFavorite} className={styles.favorite}>
+               <div onClick={(!userInfo?.name) ? (info) : (toggleFavorite)} className={styles.favorite}>
                   <HeartFilled style={{ color: colorTextBlue, opacity: isFavorite ? 1 : '0.2' }} />
                </div>
             </div>
