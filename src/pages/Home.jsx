@@ -120,14 +120,20 @@ function Home() {
         <div style={styles.contentTitle}>熱門精選</div>
         <ProductList products={products.slice(0, showItemCount)} isLoading={isLoading} />
         <div style={styles.btnCtr}>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
+          {md ? (
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <Link to="/categories/hot" style={styles.moreBtn}>
+                查看更多
+              </Link>
+            </motion.div>
+          ) : (
             <Link to="/categories/hot" style={styles.moreBtn}>
               查看更多
             </Link>
-          </motion.div>
+          )}
         </div>
 
         <div style={styles.contentTitleDivider}>
@@ -136,14 +142,20 @@ function Home() {
         </div>
         <ProductList products={products.slice(showItemCount, showItemCount + showItemCount)} isLoading={isLoading} />
         <div style={styles.btnCtr}>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
+          {md ? (
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <Link to="/categories/new" style={styles.moreBtn}>
+                查看更多
+              </Link>
+            </motion.div>
+          ) : (
             <Link to="/categories/new" style={styles.moreBtn}>
               查看更多
             </Link>
-          </motion.div>
+          )}
         </div>
       </div>
 
