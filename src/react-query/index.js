@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { getProductById, getProducts, getProductsByCategory, login, register, getUserInfo, updateUserInfo, logout, toggleFavoriteProduct, } from "../api";
+import { getProductById, getProducts, getProductsByCategory, login, register, getUserInfo, updateUserInfo, logout, toggleFavoriteProduct, getProductsByFavorites } from "../api";
 
 export const useProducts = () => {
   const { data, isLoading } = useQuery([], getProducts);
@@ -67,4 +67,9 @@ export const useToggleFavoriteProduct = () => {
       queryClient.invalidateQueries(["uid"]);
     },
   });
+};
+
+export const useProductsByFavorites = (uid) => {
+  const { data, isLoading } = useQuery([uid], getProductsByFavorites);
+  return { data, isLoading };
 };

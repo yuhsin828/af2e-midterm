@@ -163,3 +163,23 @@ export const toggleFavoriteProduct = async ({ productId, uid }) => {
     await updateDoc(docRef, { favorites });
     return favorites;
 }
+
+export const getProductsByFavorites = async ({ queryKey }) => {
+    const [uid] = queryKey;
+    const docRef = doc(db, "users", uid);
+    const docSnap = await getDoc(docRef);
+    const userDoc = docSnap.data();
+    const favorites = userDoc?.favorites || [];
+    let result = [];
+    for (let i = 0; i < favorites.length; i++) {
+        const q = await query(
+            productsCollection,
+            where("id", "==", favorites[i])
+        );
+        let querySnapshot = await getDocs(q);
+        querySnapshot.forEach(async (product) => {
+            await result.push(product.data());
+        });
+    }
+    return result;
+}

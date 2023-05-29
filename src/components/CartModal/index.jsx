@@ -34,7 +34,7 @@ export default function CartModal({ isOpen, toggleModal }) {
          footer={null}
       >
          {cartItems.length === 0 ? (
-            <div>購物車是空的，快去購物吧！</div>
+            <div>購物車是空的，快去逛逛吧！</div>
          ) : (
             cartItems.map(item => (
                <li key={item.id} className={styles.item}>
